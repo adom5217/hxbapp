@@ -19,6 +19,7 @@ namespace StarForce
 
         public void OnStartButtonClick()
         {
+            
             m_ProcedureMenu.StartGame();
         }
 
@@ -36,7 +37,7 @@ namespace StarForce
         {
             GameEntry.UI.OpenDialog(new DialogParams()
             {
-                Mode = 2,
+                Mode = 1,
                 Title = GameEntry.Localization.GetString("AskQuitGame.Title"),
                 Message = GameEntry.Localization.GetString("AskQuitGame.Message"),
                 OnClickConfirm = delegate (object userData) { UnityGameFramework.Runtime.GameEntry.Shutdown(ShutdownType.Quit); },

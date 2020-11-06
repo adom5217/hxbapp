@@ -92,7 +92,10 @@ namespace StarForce
                 m_OnClickOther(m_UserData);
             }
         }
-
+        public void OnCloseButtonClick()
+        {
+            Close();
+        }
 #if UNITY_2017_3_OR_NEWER
         protected override void OnOpen(object userData)
 #else

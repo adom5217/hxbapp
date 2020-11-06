@@ -19,6 +19,9 @@ namespace StarForce
         /// </summary>
         DialogForm = 1,
 
+        //加载
+        LoadingForm = 2,
+
         /// <summary>
         /// 主菜单。
         /// </summary>
@@ -33,5 +36,9 @@ namespace StarForce
         /// 关于。
         /// </summary>
         AboutForm = 102,
+
+
+
+        
     }
 }

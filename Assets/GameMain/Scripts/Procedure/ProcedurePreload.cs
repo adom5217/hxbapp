@@ -101,7 +101,7 @@ namespace StarForce
             LoadDictionary("Default");
 
             // Preload fonts
-            LoadFont("MainFont");
+            LoadFont("FZptyjt");//MainFont
         }
 
         private void LoadConfig(string configName)
