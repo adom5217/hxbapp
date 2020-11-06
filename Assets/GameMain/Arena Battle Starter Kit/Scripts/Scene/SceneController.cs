@@ -42,7 +42,8 @@ public class SceneController : MonoBehaviour {
     public void InitStage()
     {
         this.Stage.Init();
-        UIController.instance.ShowGameOverlayWindow();
+        if(UIController.instance)
+            UIController.instance.ShowGameOverlayWindow();
     }
 
     public void SetPlayerUnit(UnitItemBaseCtrl unit)

@@ -37,7 +37,8 @@ namespace StarForce
         /// </summary>
         AboutForm = 102,
 
-
+        // 摇杆
+        JoystickForm = 103,
 
         
     }

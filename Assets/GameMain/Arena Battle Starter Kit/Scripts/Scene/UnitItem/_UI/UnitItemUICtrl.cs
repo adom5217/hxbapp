@@ -37,7 +37,11 @@ public class UnitItemUICtrl : MonoBehaviour {
     {
         if (this._parent == SceneController.instance.player)
         {
-            Vector2 direction = GameOverlayWindowCtrl.instance.NavigatorJoystickComponent.Direction;
+            Vector2 direction = new Vector2();
+            if(GameOverlayWindowCtrl.instance) //旧版
+                direction = GameOverlayWindowCtrl.instance.NavigatorJoystickComponent.Direction;
+            if(StarForce.JoystickForm.Ins)
+                direction = StarForce.JoystickForm.Ins.NavigatorJoystickComponent.Direction;
             this.NavigationCircle.position = (this.transform.position + new Vector3(direction.x, 0, direction.y).normalized);
         }
     }

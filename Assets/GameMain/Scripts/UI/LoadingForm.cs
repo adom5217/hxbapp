@@ -7,6 +7,7 @@
 
 using GameFramework;
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityGameFramework.Runtime;
@@ -46,18 +47,18 @@ namespace StarForce
             mMaxPro = loadingParams.max;
             m_Progress.value = 0;
             //先制作一个假的进度条
-            StartCoroutine(Updarepropress());
+            Updarepropress();
         }
-       
-        private IEnumerator Updarepropress()
+        //这里尽不能用协程，切换场景GF会关闭From再激活一次 导致协程报错失败
+        private async void Updarepropress()
         {
-            yield return new WaitForSeconds(0.2f);
-            //while(mCurPro<mMaxPro)
-            //{
-            //    mCurPro++;
-            //    m_Progress.value = mCurPro/mMaxPro;
-            //    yield return new WaitForSeconds(0.2f);
-            //}
+
+            while (mCurPro < mMaxPro)
+            {
+                mCurPro++;
+                m_Progress.value = mCurPro / mMaxPro;
+                await Task.Delay(100);
+            }
             Debug.Log("模拟加载完成");
             Close();
         }

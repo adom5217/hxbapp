@@ -42,5 +42,11 @@ namespace StarForce
                 //});
             }
         }
+         public override void Initialize()
+         { 
+             base.Initialize();
+             GameEntry.UI.OpenUIForm(UIFormId.JoystickForm);
+             SceneController.instance.InitStage();
+         }
     }
 }

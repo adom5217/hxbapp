@@ -8,6 +8,7 @@
 using GameFramework;
 using GameFramework.DataTable;
 using UnityEngine;
+using UnityGameFramework.Runtime;
 
 namespace StarForce
 {
@@ -22,7 +23,11 @@ namespace StarForce
                 return GameMode.Survival;
             }
         }
-
+         protected ScrollableBackground SceneBackground
+        {
+            get;
+            private set;
+        }
         public override void Update(float elapseSeconds, float realElapseSeconds)
         {
             base.Update(elapseSeconds, realElapseSeconds);
@@ -39,6 +44,24 @@ namespace StarForce
                     Position = new Vector3(randomPositionX, 0f, randomPositionZ),
                 });
             }
+        }
+
+        public override void Initialize()
+        { 
+            base.Initialize();
+             SceneBackground = Object.FindObjectOfType<ScrollableBackground>();
+            if (SceneBackground == null)
+            {
+                Log.Warning("Can not find scene background.");
+                return;
+            }
+
+            SceneBackground.VisibleBoundary.gameObject.GetOrAddComponent<HideByBoundary>();
+            GameEntry.Entity.ShowMyAircraft(new MyAircraftData(GameEntry.Entity.GenerateSerialId(), 10000)
+            {
+                Name = "My Aircraft",
+                Position = Vector3.zero,
+            });
         }
     }
 }

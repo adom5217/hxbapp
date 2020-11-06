@@ -18,11 +18,7 @@ namespace StarForce
             get;
         }
 
-        protected ScrollableBackground SceneBackground
-        {
-            get;
-            private set;
-        }
+       
 
         public bool GameOver
         {
@@ -37,19 +33,7 @@ namespace StarForce
             GameEntry.Event.Subscribe(ShowEntitySuccessEventArgs.EventId, OnShowEntitySuccess);
             GameEntry.Event.Subscribe(ShowEntityFailureEventArgs.EventId, OnShowEntityFailure);
 
-            SceneBackground = Object.FindObjectOfType<ScrollableBackground>();
-            if (SceneBackground == null)
-            {
-                Log.Warning("Can not find scene background.");
-                return;
-            }
-
-            SceneBackground.VisibleBoundary.gameObject.GetOrAddComponent<HideByBoundary>();
-            GameEntry.Entity.ShowMyAircraft(new MyAircraftData(GameEntry.Entity.GenerateSerialId(), 10000)
-            {
-                Name = "My Aircraft",
-                Position = Vector3.zero,
-            });
+           
 
             GameOver = false;
             m_MyAircraft = null;

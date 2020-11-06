@@ -27,7 +27,7 @@ namespace StarForce
         public void StartGame()
         {
             m_StartGame = true;
-            //GameEntry.UI.OpenUIForm(UIFormId.LoadingForm,new LoadingParams());
+            GameEntry.UI.OpenUIForm(UIFormId.LoadingForm,new LoadingParams());
         }
 
         protected override void OnEnter(ProcedureOwner procedureOwner)
