@@ -19,7 +19,7 @@ namespace StarForce
 
         public void OnStartButtonClick()
         {
-            
+           
             m_ProcedureMenu.StartGame();
         }
 

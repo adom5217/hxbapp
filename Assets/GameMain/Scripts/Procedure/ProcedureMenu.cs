@@ -27,6 +27,7 @@ namespace StarForce
         public void StartGame()
         {
             m_StartGame = true;
+            //GameEntry.UI.OpenUIForm(UIFormId.LoadingForm,new LoadingParams());
         }
 
         protected override void OnEnter(ProcedureOwner procedureOwner)
@@ -58,7 +59,7 @@ namespace StarForce
 
             if (m_StartGame)
             {
-                procedureOwner.SetData<VarInt>("NextSceneId", GameEntry.Config.GetInt("Scene.Main"));
+                procedureOwner.SetData<VarInt>("NextSceneId", GameEntry.Config.GetInt("Scene.MainScene"));
                 procedureOwner.SetData<VarByte>("GameMode", (byte)GameMode.Survival);
                 ChangeState<ProcedureChangeScene>(procedureOwner);
             }

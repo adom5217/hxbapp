@@ -131,6 +131,7 @@
     <Compile Include="Assets\GameMain\Scripts\Entity\EntityLogic\Weapon.cs" />
     <Compile Include="Assets\GameMain\Scripts\Game\GameBase.cs" />
     <Compile Include="Assets\GameMain\Scripts\Game\GameMode.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Game\MeleeGame.cs" />
     <Compile Include="Assets\GameMain\Scripts\Game\SurvivalGame.cs" />
     <Compile Include="Assets\GameMain\Scripts\HPBar\HPBarComponent.cs" />
     <Compile Include="Assets\GameMain\Scripts\HPBar\HPBarItem.cs" />
