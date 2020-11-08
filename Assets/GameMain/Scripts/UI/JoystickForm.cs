@@ -42,7 +42,6 @@ namespace StarForce
        {
             if (SceneController.instance.player != null)
             {
-            
                 //编辑器操作简单实现一下
                 if (Input.GetKeyDown (KeyCode.A)) {
                     moveVector1= new Vector3(-1,0,0);
@@ -86,7 +85,9 @@ namespace StarForce
                     SceneController.instance.player.Aim(directionVector);
                 }
                 else
+                {
                     SceneController.instance.player.StopAim();
+                }
             }
             
         }
