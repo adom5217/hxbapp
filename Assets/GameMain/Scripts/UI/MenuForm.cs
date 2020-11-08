@@ -23,6 +23,15 @@ namespace StarForce
             m_ProcedureMenu.StartGame();
         }
 
+        public void TestButton()
+        {
+            Log.Debug("这里添加测试打开UI Form");
+
+            //
+            //GameEntry.UI.OpenUIForm(UIFormId.SettingForm);
+
+        }
+
         public void OnSettingButtonClick()
         {
             GameEntry.UI.OpenUIForm(UIFormId.SettingForm);
