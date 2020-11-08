@@ -14,63 +14,53 @@ namespace StarForce
 {
     public class MatchForm : UGuiForm
     {
-
-        // 菜单流程对象
-        private ProcedureMenu m_ProcedureMenu = null;
         // 匹配的6个玩家
         [SerializeField]
         public List<MatchFormPlayer> matchFormPlayers;
-
-        private bool excuteMatch = false;
-
+        [SerializeField]
+        public List<Sprite> sprites;
         /// <summary>
         /// 加入按钮点击
         /// </summary>
         public void OnJoinButtonClick()
         {
-            //GameEntry.UI.OpenUIForm(UIFormId.SettingForm);
         }
+
+
         protected override void OnOpen(object userData)
         {
             base.OnOpen(userData);
-            m_ProcedureMenu = (ProcedureMenu)userData;
-            if (m_ProcedureMenu == null)
-            {
-                Log.Warning("ProcedureMenu is invalid when open MatchForm.");
-                return;
-            }
+            StartCoroutine(PlayersJoin("萌忍者"));
         }
         /// <summary>
         /// 模拟玩家加入
         /// </summary>
         /// <returns></returns>
-        IEnumerator PlayersJoin()
+        IEnumerator PlayersJoin(string player1Name)
         {
-
+            // 先清掉名字和头像图片，在模拟玩家加入
+            matchFormPlayers.ForEach(e =>
+            {
+                e.Clear();
+            });
+            matchFormPlayers[0].SetMatchFormPlayerInfo(player1Name, null);
             for (int i = 1; i < 6; i++)
             {
+                Log.Info("PlayersJoin");
                 yield return new WaitForSecondsRealtime(Random.Range(0.0f, 2f));
-                matchFormPlayers[i].SetMatchFormPlayerInfo("BOT-" + i.ToString(), null);
+                matchFormPlayers[i].SetMatchFormPlayerInfo("BOT-" + i.ToString(), sprites[Random.Range(0,5)]);
             }
             yield return 0;
         }
         protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
         {
-            if (!excuteMatch)
-            {
-                // 先清掉名字和头像图片，在模拟玩家加入
-                matchFormPlayers.ForEach(e =>
-                {
-                    e.Clear();
-                });
-                matchFormPlayers[0].SetMatchFormPlayerInfo("萌忍者", null);
-                StartCoroutine(PlayersJoin());
-                excuteMatch = !excuteMatch;
-            }
+
+        }
+        protected override void OnResume()
+        {
         }
         protected override void OnClose(bool isShutdown, object userData)
         {
-            m_ProcedureMenu = null;
             base.OnClose(isShutdown, userData);
         }
     }
