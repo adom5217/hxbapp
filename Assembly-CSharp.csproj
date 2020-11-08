@@ -188,11 +188,13 @@
     <None Include="Assets\GameMain\DataTables\Music.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\GameMain\DataTables\Armor.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\StandardMobile.shader" />
     <None Include="Assets\GameMain\DataTables\UISound.txt" />
     <None Include="Assets\GameMain\Localization\English\Dictionaries\Default.xml" />
     <None Include="Assets\GameMain\Arena Battle Starter Kit\Shaders\Default.shader" />
     <None Include="Assets\GameMain\Configs\DefaultConfig.txt" />
     <None Include="Assets\GameMain\Configs\ResourceBuilder.xml" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\StandardMobile.cginc" />
     <None Include="Assets\GameMain\DataTables\Aircraft.txt" />
     <None Include="Assets\GameMain\Configs\ResourceCollection.xml" />
     <None Include="Assets\GameMain\DataTables\UIForm.txt" />
