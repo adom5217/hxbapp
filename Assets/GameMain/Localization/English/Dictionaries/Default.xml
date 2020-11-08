@@ -25,5 +25,8 @@
     <String Key="Setting.UISound" Value="UI Sound FX" />
     <String Key="Setting.Language" Value="Language" />
     <String Key="Setting.LanguageTips" Value="Language change demands restarting." />
+    <String Key="Match.Success" Value="Match successfully" />
+    <String Key="Match.Join" Value="Join" />
+    
   </Dictionary>
 </Dictionaries>

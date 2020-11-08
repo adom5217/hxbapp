@@ -25,5 +25,7 @@
     <String Key="Setting.UISound" Value="UI 효과음" />
     <String Key="Setting.Language" Value="언어" />
     <String Key="Setting.LanguageTips" Value="사용언어를 바꾼후 리부팅이 필요 합니다" />
+    <String Key="Match.Success" Value="매 칭 성공" />
+    <String Key="Match.Join" Value="가입 하 다" />
   </Dictionary>
 </Dictionaries>

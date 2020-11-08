@@ -40,6 +40,7 @@ namespace StarForce
         // 摇杆
         JoystickForm = 103,
 
-        
+        // 匹配界面
+        MatchForm = 104,
     }
 }
