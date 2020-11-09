@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\CameraController.cs" />
+    <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\GameData.cs" />
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\GrassItemCtrl.cs" />
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\SceneController.cs" />
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\StageItem\StageItemCtrl.cs" />
