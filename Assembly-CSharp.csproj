@@ -170,6 +170,8 @@
     <Compile Include="Assets\GameMain\Scripts\UI\DialogParams.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\JoystickForm.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\LoadingForm.cs" />
+    <Compile Include="Assets\GameMain\Scripts\UI\MatchForm\MatchForm.cs" />
+    <Compile Include="Assets\GameMain\Scripts\UI\MatchForm\MatchFormPlayer.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\MenuForm.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\SettingForm.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\UGuiForm.cs" />

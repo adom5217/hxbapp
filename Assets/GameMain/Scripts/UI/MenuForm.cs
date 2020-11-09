@@ -27,8 +27,8 @@ namespace StarForce
         {
             Log.Debug("这里添加测试打开UI Form");
 
-            //
-            //GameEntry.UI.OpenUIForm(UIFormId.SettingForm);
+            //随便测试
+            GameEntry.UI.OpenUIForm(UIFormId.MatchForm);
 
         }
 
