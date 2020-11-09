@@ -45,7 +45,24 @@ public class GameData : MonoBehaviour
         }
         return mPlayers;
     }
+    //设置道具
+    public void SetItem(int id)
+    {
+        mPlayers[0].itemId = id;
 
+    }
+    //设置皮肤
+    public void SetSkin(int id)
+    {
+        mPlayers[0].skinId = id;
+
+    }
+    //设置装饰
+    public void SetDress(int id)
+    {
+        mPlayers[0].dressId = id;
+
+    }
 
 }
 
