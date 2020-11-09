@@ -42,5 +42,8 @@ namespace StarForce
 
         // 匹配界面
         MatchForm = 104,
+
+        // 选择角色界面
+        RoleForm = 105,
     }
 }

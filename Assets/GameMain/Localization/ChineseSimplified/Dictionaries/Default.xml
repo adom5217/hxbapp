@@ -27,5 +27,9 @@
     <String Key="Setting.LanguageTips" Value="更改语言需要重启游戏" />
     <String Key="Match.Success" Value="匹配成功" />
     <String Key="Match.Join" Value="加入" />
+    <String Key="RoleForm.Confirm" Value="确定" />
+    <String Key="RoleForm.Role" Value="角色" />
+    <String Key="RoleForm.Dress" Value="装扮" />
+    <String Key="RoleForm.Prop" Value="道具" />
   </Dictionary>
 </Dictionaries>
