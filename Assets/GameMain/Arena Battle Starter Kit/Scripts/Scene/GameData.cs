@@ -34,6 +34,7 @@ public class GameData : MonoBehaviour
         
         return pp;
     }
+
     //第一个玩家自己
     public List<PlayerData> CreatPlayers()
     {
@@ -48,7 +49,7 @@ public class GameData : MonoBehaviour
 
 }
 
-//玩家数据 道具 皮肤 装扮 都设计 0开始下标
+//玩家数据 道具 皮肤 装扮 都设计 0开始下标 0-6 关联到模型上 对应关系
 public class PlayerData
 {
     public int uid = 0; //唯一id
