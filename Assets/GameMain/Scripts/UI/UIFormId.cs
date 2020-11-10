@@ -45,5 +45,8 @@ namespace StarForce
 
         // 选择角色界面
         RoleForm = 105,
+
+        // 排行榜界面
+        RankForm = 106,
     }
 }

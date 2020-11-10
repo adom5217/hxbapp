@@ -31,5 +31,7 @@
     <String Key="RoleForm.Role" Value="角色" />
     <String Key="RoleForm.Dress" Value="装扮" />
     <String Key="RoleForm.Prop" Value="道具" />
+    <String Key="RankForm.GameRank" Value="游戏排行" />
+    <String Key="RankForm.Continue" Value="继续" />
   </Dictionary>
 </Dictionaries>

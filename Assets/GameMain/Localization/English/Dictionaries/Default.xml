@@ -31,5 +31,7 @@
     <String Key="RoleForm.Role" Value="Role" />
     <String Key="RoleForm.Dress" Value="Dress" />
     <String Key="RoleForm.Prop" Value="Porp" />
+    <String Key="RankForm.GameRank" Value="Ranking" />
+    <String Key="RankForm.Continue" Value="Continue" />
   </Dictionary>
 </Dictionaries>
