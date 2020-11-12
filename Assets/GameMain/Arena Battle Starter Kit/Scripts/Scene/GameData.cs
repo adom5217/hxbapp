@@ -8,7 +8,7 @@ public class GameData : MonoBehaviour
     private int uuid=100;
 
     public int mSkillId = 0; //技能id
-    public static int MaxPlayer = 8;
+    public static int MaxPlayer = 6;
     private List<PlayerData> mPlayers = new List<PlayerData>();
     void Awake()
     {
