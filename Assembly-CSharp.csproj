@@ -185,6 +185,7 @@
     <Compile Include="Assets\GameMain\Scripts\Utility\LitJsonHelper.cs" />
     <Compile Include="Assets\GameMain\Scripts\Utility\WebUtility.cs" />
     <Compile Include="Assets\GameMain\Suriyun\Scripts\AnimatorController.cs" />
+    <Compile Include="Assets\GameMain\Suriyun\Scripts\Camera Scripts\MouseOrbitImproved.cs" />
     <Compile Include="Assets\GameMain\Suriyun\Scripts\ExampleSwapMaterials.cs" />
     <Compile Include="Assets\GameMain\Suriyun\Scripts\Swapper1.cs" />
     <Compile Include="Assets\GameMain\Suriyun\Scripts\Swapper2.cs" />
