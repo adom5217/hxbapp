@@ -33,5 +33,13 @@
     <String Key="RoleForm.Prop" Value="道具" />
     <String Key="RankForm.GameRank" Value="游戏排行" />
     <String Key="RankForm.Continue" Value="继续" />
+    <String Key="OperationGuideForm.Continue" Value="继续" />
+    <String Key="OperationGuideForm.FarAttack" Value="远攻" />
+    <String Key="OperationGuideForm.Sprint" Value="冲刺" />
+    <String Key="OperationGuideForm.CloseCombat" Value="近战" />
+    <String Key="OperationGuideForm.KeyExplain" Value="按键说明" />
+    <String Key="OperationGuideForm.DirectionController" Value="方向转盘" />
+    <String Key="OverForm.ReCombat" Value="再次战斗" />
+  
   </Dictionary>
 </Dictionaries>

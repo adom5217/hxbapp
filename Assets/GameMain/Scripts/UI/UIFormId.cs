@@ -48,5 +48,11 @@ namespace StarForce
 
         // 排行榜界面
         RankForm = 106,
+
+        // 操作导航界面
+        OprationGuideForm = 107,
+
+        // 战斗结束界面
+        OverForm = 108,
     }
 }

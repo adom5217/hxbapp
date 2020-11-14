@@ -14,16 +14,12 @@ using UnityGameFramework.Runtime;
 namespace StarForce
 {
     /// <summary>
-    /// 排行榜界面
+    /// 操作道航界面
     /// </summary>
-    public class RankForm : UGuiForm
+    public class OperationGuideForm : UGuiForm
     {
-        // 排行榜的6行
-        public List<Transform> rankListItem;
         protected override void OnOpen(object userData)
         {
-            // 1.获取排行榜数据
-            // 2.修改展示数据
         }
         protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
         {

@@ -100,7 +100,10 @@ namespace StarForce
                 texts[i].font = s_MainFont;
                 if (!string.IsNullOrEmpty(texts[i].text))
                 {
-                    texts[i].text = GameEntry.Localization.GetString(texts[i].text);
+                    if (!GameEntry.Localization.GetString(texts[i].text).StartsWith("<NoKey>"))
+                    {
+                        texts[i].text = GameEntry.Localization.GetString(texts[i].text);
+                    }
                 }
             }
         }

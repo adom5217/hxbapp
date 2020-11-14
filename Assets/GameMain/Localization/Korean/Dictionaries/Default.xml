@@ -33,5 +33,13 @@
     <String Key="RoleForm.Prop" Value="도구" />
     <String Key="RankForm.GameRank" Value="순위표" />
     <String Key="RankForm.Continue" Value="계속 하 다" />
+    <String Key="OperationGuideForm.Continue" Value="계속 하 다" />
+    <String Key="OperationGuideForm.Continue" Value="계속 하 다" />
+    <String Key="OperationGuideForm.FarAttack" Value="远攻" />
+    <String Key="OperationGuideForm.Sprint" Value="멀리 공격 하 다" />
+    <String Key="OperationGuideForm.CloseCombat" Value="근접전" />
+    <String Key="OperationGuideForm.KeyExplain" Value="버튼 설명" />
+    <String Key="OperationGuideForm.DirectionController" Value="핸들" />
+    <String Key="OverForm.ReCombat" Value="재 전투" />
   </Dictionary>
 </Dictionaries>

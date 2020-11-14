@@ -33,5 +33,12 @@
     <String Key="RoleForm.Prop" Value="Porp" />
     <String Key="RankForm.GameRank" Value="Ranking" />
     <String Key="RankForm.Continue" Value="Continue" />
+    <String Key="OperationGuideForm.Continue" Value="Continue" />
+    <String Key="OperationGuideForm.FarAttack" Value="Far Attack" />
+    <String Key="OperationGuideForm.Sprint" Value="Sprint" />
+    <String Key="OperationGuideForm.CloseCombat" Value="Close Combat" />
+    <String Key="OperationGuideForm.KeyExplain" Value="Key Explain" />
+    <String Key="OperationGuideForm.DirectionController" Value="Direction Controller" />
+    <String Key="OverForm.ReCombat" Value="ReCombat" />
   </Dictionary>
 </Dictionaries>
