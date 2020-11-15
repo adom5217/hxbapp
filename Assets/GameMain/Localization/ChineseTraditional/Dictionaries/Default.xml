@@ -27,5 +27,18 @@
     <String Key="Setting.LanguageTips" Value="更改語言需要重啟遊戲" />
     <String Key="Match.Success" Value="匹配成功" />
     <String Key="Match.Join" Value="加入" />
+    <String Key="RoleForm.Confirm" Value="確定" />
+    <String Key="RoleForm.Role" Value="角色" />
+    <String Key="RoleForm.Dress" Value="裝扮" />
+    <String Key="RoleForm.Prop" Value="道具" />
+    <String Key="RankForm.GameRank" Value="遊戲排行" />
+    <String Key="RankForm.Continue" Value="繼續" />
+    <String Key="OperationGuideForm.Continue" Value="繼續" />
+    <String Key="OperationGuideForm.FarAttack" Value="遠攻" />
+    <String Key="OperationGuideForm.Sprint" Value="沖刺" />
+    <String Key="OperationGuideForm.CloseCombat" Value="近戰" />
+    <String Key="OperationGuideForm.KeyExplain" Value="按鍵說明" />
+    <String Key="OperationGuideForm.DirectionController" Value="方向轉盤" />
+    <String Key="OverForm.ReCombat" Value="再次戰鬥" />
   </Dictionary>
 </Dictionaries>

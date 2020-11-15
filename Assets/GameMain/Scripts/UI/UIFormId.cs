@@ -42,5 +42,17 @@ namespace StarForce
 
         // 匹配界面
         MatchForm = 104,
+
+        // 选择角色界面
+        RoleForm = 105,
+
+        // 排行榜界面
+        RankForm = 106,
+
+        // 操作导航界面
+        OprationGuideForm = 107,
+
+        // 战斗结束界面
+        OverForm = 108,
     }
 }

@@ -27,5 +27,19 @@
     <String Key="Setting.LanguageTips" Value="사용언어를 바꾼후 리부팅이 필요 합니다" />
     <String Key="Match.Success" Value="매 칭 성공" />
     <String Key="Match.Join" Value="가입 하 다" />
+    <String Key="RoleForm.Confirm" Value="확인" />
+    <String Key="RoleForm.Role" Value="배역" />
+    <String Key="RoleForm.Dress" Value="단장 하 다" />
+    <String Key="RoleForm.Prop" Value="도구" />
+    <String Key="RankForm.GameRank" Value="순위표" />
+    <String Key="RankForm.Continue" Value="계속 하 다" />
+    <String Key="OperationGuideForm.Continue" Value="계속 하 다" />
+    <String Key="OperationGuideForm.Continue" Value="계속 하 다" />
+    <String Key="OperationGuideForm.FarAttack" Value="远攻" />
+    <String Key="OperationGuideForm.Sprint" Value="멀리 공격 하 다" />
+    <String Key="OperationGuideForm.CloseCombat" Value="근접전" />
+    <String Key="OperationGuideForm.KeyExplain" Value="버튼 설명" />
+    <String Key="OperationGuideForm.DirectionController" Value="핸들" />
+    <String Key="OverForm.ReCombat" Value="재 전투" />
   </Dictionary>
 </Dictionaries>
