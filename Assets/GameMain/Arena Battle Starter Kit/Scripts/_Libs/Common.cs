@@ -8,9 +8,13 @@ public class Common
     public enum State
     {
         IDLE,
+        WALK,
         RUN,
         ATTACK,
-        DESTROYED
+        DAMAGE,
+        VICTORY,
+        DIE,
     }
 
+   
 }

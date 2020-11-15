@@ -64,10 +64,13 @@
   <ItemGroup>
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\AnimatorCtrl.cs" />
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\CameraController.cs" />
+    <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\DressUp.cs" />
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\GameData.cs" />
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\GrassItemCtrl.cs" />
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\SceneController.cs" />
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\StageItem\StageItemCtrl.cs" />
+    <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\SwapMaterials.cs" />
+    <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\SwapWeapon.cs" />
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\UnitItem\UnitItemBaseCtrl.cs" />
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\UnitItem\_AI\UnitItemAIHelperCtrl.cs" />
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\UnitItem\_Bullets\BulletCtrl.cs" />
@@ -175,6 +178,9 @@
     <Compile Include="Assets\GameMain\Scripts\UI\MatchForm\MatchForm.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\MatchForm\MatchFormPlayer.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\MenuForm.cs" />
+    <Compile Include="Assets\GameMain\Scripts\UI\OperationGuideForm\OperationGuideForm.cs" />
+    <Compile Include="Assets\GameMain\Scripts\UI\RankForm\RankForm.cs" />
+    <Compile Include="Assets\GameMain\Scripts\UI\RoleForm\RoleForm.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\SettingForm.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\UGuiForm.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\UGuiGroupHelper.cs" />

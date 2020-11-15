@@ -13,6 +13,7 @@ public class UnitItemBaseCtrl : MonoBehaviour
     /* component refs */
     public UnitItemAIHelperCtrl aiHelper;
     public Animator Animator;
+    private AnimatorCtrl AnimatorCtrl;
     public GameObject Model;
     public Transform AttackRangeComponent;
     public SphereCollider GrassDetectingCollider;
@@ -43,7 +44,10 @@ public class UnitItemBaseCtrl : MonoBehaviour
     private Common.State _currentState;
     private bool _isCollidingWithObstacle;
     private Vector3 _collisionVector;
-     
+    private void Start()
+    {
+        AnimatorCtrl = Model.GetComponent<AnimatorCtrl>();
+    }
 
     public void SetData(int itemId, float posX, float posZ, bool isOurTeam)
     {
@@ -137,20 +141,25 @@ public class UnitItemBaseCtrl : MonoBehaviour
 
     public void SetState(Common.State state)
     {
-        if (this.Animator == null)
-            return;
-
         if (state == _currentState)
             return;
 
-        if (state == Common.State.IDLE)
-            this.Animator.SetTrigger("idle");
-        else if (state == Common.State.RUN)
-            this.Animator.SetTrigger("run");
-        else if (state == Common.State.ATTACK)
-        {
-            this.Animator.SetTrigger("attack");
+        if (this.Animator)
+        {//旧版
+            if (state == Common.State.IDLE)
+                this.Animator.SetTrigger("idle");
+            else if (state == Common.State.RUN)
+                this.Animator.SetTrigger("run");
+            else if (state == Common.State.ATTACK)
+                this.Animator.SetTrigger("attack");
+            
         }
+
+        if (AnimatorCtrl)
+        {//新
+            AnimatorCtrl.SetAnimator(state);
+        }
+
 
         this._currentState = state;
 
