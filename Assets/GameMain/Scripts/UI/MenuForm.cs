@@ -19,8 +19,7 @@ namespace StarForce
 
         public void OnStartButtonClick()
         {
-           
-            m_ProcedureMenu.StartGame();
+            GameEntry.UI.OpenUIForm(UIFormId.MatchForm);
         }
 
         public void TestButton()
@@ -28,7 +27,8 @@ namespace StarForce
             Log.Debug("这里添加测试打开UI Form");
 
             //随便测试
-            GameEntry.UI.OpenUIForm(UIFormId.MatchForm);
+            
+            m_ProcedureMenu.StartGame();
 
         }
 

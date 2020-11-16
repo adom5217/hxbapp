@@ -939,6 +939,25 @@ MonoBehaviour:
     type: 3}
   m_HPBarInstanceRoot: {fileID: 1454214587}
   m_InstancePoolCapacity: 16
+--- !u!1 &1609545312 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 178960, guid: adb3eb1c35fcff14f89fba7b05c9d71c,
+    type: 3}
+  m_PrefabInstance: {fileID: 343730742}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1609545313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609545312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598461a90d540dc4faf3a070489e1689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mSkillId: 0
 --- !u!1 &1852670052
 GameObject:
   m_ObjectHideFlags: 0
