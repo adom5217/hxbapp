@@ -10,147 +10,334 @@
       <Resource Name="Localization/Dictionaries" Variant="ko-kr" FileSystem="UI" LoadType="0" Packed="True" ResourceGroups="Base" />
       <Resource Name="Localization/Dictionaries" Variant="zh-cn" FileSystem="UI" LoadType="0" Packed="True" ResourceGroups="Base" />
       <Resource Name="Localization/Dictionaries" Variant="zh-tw" FileSystem="UI" LoadType="0" Packed="True" ResourceGroups="Base" />
+      <Resource Name="MainScene" LoadType="0" Packed="True" />
       <Resource Name="Materials" FileSystem="Resources" LoadType="0" Packed="True" />
       <Resource Name="Meshes" FileSystem="Resources" LoadType="0" Packed="True" />
-      <Resource Name="Music/About" FileSystem="Resources" LoadType="0" Packed="True" ResourceGroups="Music" />
-      <Resource Name="Music/Background" FileSystem="Resources" LoadType="0" Packed="True" ResourceGroups="Music" />
-      <Resource Name="Music/Menu" FileSystem="Resources" LoadType="0" Packed="True" ResourceGroups="Music" />
+      <Resource Name="Music/music_about" LoadType="0" Packed="True" />
+      <Resource Name="Music/music_background" LoadType="0" Packed="True" />
+      <Resource Name="Music/music_battle" LoadType="0" Packed="True" />
+      <Resource Name="Music/music_menu" LoadType="0" Packed="True" />
+      <Resource Name="Music/music_ui" LoadType="0" Packed="True" />
       <Resource Name="Scenes" FileSystem="Resources" LoadType="0" Packed="True" />
       <Resource Name="Sounds" FileSystem="Resources" LoadType="0" Packed="True" />
       <Resource Name="Textures" FileSystem="Resources" LoadType="0" Packed="True" />
       <Resource Name="UI/UIForms" FileSystem="UI" LoadType="0" Packed="True" />
       <Resource Name="UI/UISounds" FileSystem="UI" LoadType="0" Packed="True" />
       <Resource Name="UI/UISprites/Common" FileSystem="UI" LoadType="0" Packed="True" />
+      <Resource Name="UI/UISprites/FightUI" FileSystem="UI" LoadType="0" Packed="True" />
       <Resource Name="UI/UISprites/Icons" FileSystem="UI" LoadType="0" Packed="True" />
       <Resource Name="UI/UISprites/Logos" FileSystem="UI" LoadType="0" Packed="True" />
+      <Resource Name="UI/UISprites/MainUI" FileSystem="UI" LoadType="0" Packed="True" />
+      <Resource Name="UI/UISprites/StartUI" FileSystem="UI" LoadType="0" Packed="True" />
     </Resources>
     <Assets>
       <Asset Guid="0179316b5fc7c2946a67c5877c02fc30" ResourceName="UI/UISprites/Common" />
+      <Asset Guid="017bc1f78b57d774aa3b6563fd068d04" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="01cb5ae5267b51a40ab0c1fc0d072a49" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="0303777fbcc53f3419a34c232cf778f4" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="0340936ae87bf9e4eb67333787a20752" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="04d7dde7615d71b4db1a0c8d67a62e95" ResourceName="UI/UIForms" />
       <Asset Guid="04dbc0581071c254ea6564b2ff06ff9b" ResourceName="Textures" />
-      <Asset Guid="093f8873cfe371d41b854ed9fb6bff69" ResourceName="Music/About" />
+      <Asset Guid="055fa3e23294d6643bbf4f70e62a34a2" ResourceName="UI/UISprites/StartUI" />
+      <Asset Guid="056de6ae177bd7c4eaa88c33fe96b0ec" ResourceName="UI/UIForms" />
+      <Asset Guid="059e2d7432602854bb68d1c7facb8492" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="06542c52a1e4942a3875903424b2e2bb" ResourceName="MainScene" />
+      <Asset Guid="06791145bb9758742909e448106f58ee" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="077a784ba23aab949905d476ef06c8b5" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="079883846f27ebb4d81cca2ba27905da" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="08167103aad248a42b8b258b4856c6cf" ResourceName="UI/UIForms" />
+      <Asset Guid="093f8873cfe371d41b854ed9fb6bff69" ResourceName="Music/music_about" />
       <Asset Guid="0963e6c65b2b1f74d9f455e21901e2dc" ResourceName="Textures" />
+      <Asset Guid="0973508ec997f214bb89bc6b9bccf751" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="0992f89f84d762f478fd32f8225168b0" ResourceName="Entities" />
       <Asset Guid="09966b19e546cc94aa84d0743cb2a83d" ResourceName="UI/UIForms" />
+      <Asset Guid="0a2126f2188104b47842b60c06c722a7" ResourceName="UI/UISprites/Common" />
       <Asset Guid="0a65a68c01a76ea4b8b574827a6467aa" ResourceName="UI/UISprites/Common" />
+      <Asset Guid="0b8d2b46ace7271419461a37ce3a81fd" ResourceName="UI/UIForms" />
+      <Asset Guid="0c5e31154d1884d43aac4b9935045d9e" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="0c7d0214ebce1a545a3d7a456e6af5f1" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="0d96046fb46284244ad177c2da442b11" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="0ddecee22d2fb465bb9ba25759528ea0" ResourceName="MainScene" />
       <Asset Guid="0ed73dc47f4cb38489020d05e9f02c99" ResourceName="Materials" />
       <Asset Guid="0f995b3145e0e7247a42da6cef1dbf23" ResourceName="Materials" />
+      <Asset Guid="0fc758315cbd93d4eaa1bd1df8ab28c0" ResourceName="UI/UISprites/StartUI" />
       <Asset Guid="1053b0070685be347ab58587156842dc" ResourceName="Localization/Dictionaries" ResourceVariant="zh-tw" />
+      <Asset Guid="10e7670a47d525f47b0399a3320e599f" ResourceName="Sounds" />
+      <Asset Guid="111a46ebbf1a0da4692f4030dc156a43" ResourceName="Sounds" />
+      <Asset Guid="11974d1c6f5a0b9419d979edfd0bf782" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="11e27c26ac87b40f0a62ec40d7261989" ResourceName="Entities" />
+      <Asset Guid="141bd540eea6c2c4c8574b915d043349" ResourceName="UI/UISprites/Common" />
+      <Asset Guid="143836dea26eb3440b6baca269985bee" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="1478894bc9a1ed241b05b0862a7b8bce" ResourceName="Textures" />
       <Asset Guid="14869ac0d4433f04db1704e39d03412e" ResourceName="Localization/Dictionaries" ResourceVariant="en-us" />
       <Asset Guid="156d241f796508c4da4fc354a7fbf5a8" ResourceName="UI/UISprites/Common" />
       <Asset Guid="160925a6fe2664f2a978566b819f0af0" ResourceName="Entities" />
       <Asset Guid="185f97f18bd603a478461ce9c08bd039" ResourceName="Materials" />
+      <Asset Guid="19d1c027cc97c6a409199fa77b75cfb5" ResourceName="UI/UISprites/FightUI" />
+      <Asset Guid="1abc29bbf6d8daa45827dce66b278714" ResourceName="UI/UISprites/StartUI" />
       <Asset Guid="1b4bad6cea5a94611b21f9757fe41444" ResourceName="Materials" />
       <Asset Guid="1be4472894949437694aead55c6da60f" ResourceName="Sounds" />
       <Asset Guid="1c89236d45255234ebd1d39657ff7e02" ResourceName="Textures" />
+      <Asset Guid="1c8c3d5c4f48de049b987b9bfb969b0c" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="1cfe02ffd0b74854ea5bcd1a3c63ac3c" ResourceName="Materials" />
       <Asset Guid="1d46a17a95a444c08830612bc1146d1d" ResourceName="Materials" />
       <Asset Guid="1e0350b97c61bfb4a91c62d756d01727" ResourceName="Materials" />
+      <Asset Guid="1fa5169eeba5eac41aa971f4c28f1d81" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="236433a27ce40a7429b87d14d8fa3035" ResourceName="UI/UISprites/Common" />
       <Asset Guid="239366f83979ffa48a45dac2f0f1e8cb" ResourceName="DataTables" />
       <Asset Guid="24ca310f92a6796408f1db7647ec4e55" ResourceName="UI/UISprites/Common" />
+      <Asset Guid="2541bafc017f7c844988c0b2470c174c" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="26970264307a5c043bf7a0d430fa3def" ResourceName="UI/UISprites/FightUI" />
+      <Asset Guid="271167ef30ca811449111b8aa2e135a0" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="2768a9a4c8d289840918dcb879705893" ResourceName="Meshes" />
+      <Asset Guid="27ad4020b683241448b12ae24092428d" ResourceName="UI/UISprites/StartUI" />
+      <Asset Guid="2928b155320b2914cb856835aea1fbcc" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="2a0126d4f7386114cbf2d4f82d27e83e" ResourceName="Music/music_battle" />
+      <Asset Guid="2a9540b65e2fe2a48a181fa47fdc2a4c" ResourceName="UI/UISprites/Common" />
       <Asset Guid="2cb5eef4d7d7bf6459dd13a3f8d90246" ResourceName="Textures" />
+      <Asset Guid="2dd8c201040722449949427fc60ebcb0" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="2e8dd04740644bd4cb2eb3dec8449fd7" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="30af4543770d7431895e9cd984de20ec" ResourceName="MainScene" />
       <Asset Guid="315e8ed2db27c254cb3366ff0793cd90" ResourceName="DataTables" />
+      <Asset Guid="321a446df8778b742973e06a7cc4eeb9" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="32659808785095c46885742c911158f1" ResourceName="UI/UISprites/FightUI" />
+      <Asset Guid="33f1031382daa1c4db4e1816022bb51d" ResourceName="UI/UISprites/FightUI" />
       <Asset Guid="3455fe69f7ddc4604b95bf9b0a1e88d7" ResourceName="Entities" />
       <Asset Guid="352da872791696c48af3b21132e3e3c3" ResourceName="DataTables" />
+      <Asset Guid="35482007562d5834e882bd8a8ca42324" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="372a8b1e52bedc64b9207b12d167afaa" ResourceName="DataTables" />
+      <Asset Guid="375e7338d6a04a245a802e6b9ee67b71" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="37e556e82d5474747b9bb110e3eba4ab" ResourceName="Sounds" />
+      <Asset Guid="380c8500a695a04488c31a6726ff625a" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="382f07d7a8427be488b9506f9557c231" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="3a4d85208902d154cbee92e36e2afb28" ResourceName="UI/UISprites/FightUI" />
+      <Asset Guid="3a4f03e12472b0a47ae2f5a9152bcf91" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="3aa539b1e46111d4299a83c73ebe762c" ResourceName="UI/UIForms" />
+      <Asset Guid="3abd2eaf034618442a0ff596c468a98c" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="3be3fac3611f4584695662c4889f722d" ResourceName="UI/UISprites/Common" />
       <Asset Guid="3dc7455402dfa462b89a4bbd513955e9" ResourceName="Sounds" />
       <Asset Guid="3e504a46a8fcec34db3c4776530c6eb2" ResourceName="Textures" />
       <Asset Guid="3f54fcfdac53aec42ae18a6a1c6d8cb1" ResourceName="UI/UISprites/Common" />
+      <Asset Guid="4241810f2941d48419387883bd558e75" ResourceName="UI/UISprites/StartUI" />
+      <Asset Guid="4436e4a7310d0354081c9c11ff2dbca4" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="4473d81b14ddb0143addf0e6050d8491" ResourceName="Scenes" />
       <Asset Guid="44c8db52241385c45bbb14a1718f17bf" ResourceName="Configs" />
+      <Asset Guid="460d4edc03e625b458fcd3e581c17fc8" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="47e2ef6b06335f14e8b6a58b389f58f6" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="4a17d2c656f5c6b44a31e3ee547a76b0" ResourceName="DataTables" />
+      <Asset Guid="4a287bb5c91df184f856252cf4788143" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="4c3865b2ac420cd46a9cde6ab468d016" ResourceName="Materials" />
+      <Asset Guid="4d556e7bd6b67144a9bc52c91694042d" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="4db6a299939bfe94893585eb387f577a" ResourceName="DataTables" />
+      <Asset Guid="4debdba0cf0c75b4ea085e7af970591c" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="4eddb66735235974281624a68969f1bc" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="4f4f4ec2e61fc774196bb87875bdbd94" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="4f688097e85071841a2c3ba165000c20" ResourceName="Textures" />
       <Asset Guid="5282f20eba4d44213820e21af8481932" ResourceName="Meshes" />
+      <Asset Guid="52b1987885cc5e243bb700c76f38a48b" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="56b8df63bbad60749a69e38bc687fadf" ResourceName="UI/UISprites/Common" />
+      <Asset Guid="57008a9d371ba6644b38c84541db1228" ResourceName="UI/UISprites/Common" />
       <Asset Guid="578af1667322bab45b652b79a40bb4fb" ResourceName="Materials" />
       <Asset Guid="583ff7026dac91849b7c7b2468ba456b" ResourceName="Materials" />
+      <Asset Guid="590deac96af208646aad708acb440420" ResourceName="Fonts" />
+      <Asset Guid="5976c477835c62d40b7cde656c8952f2" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="5b7ff94460c39eb49b42354d3df8a5da" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="5bfc9cc94f21039448b081163a7a984b" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="5dcd89912e222bf4c87f76db4044bc5e" ResourceName="Localization/Dictionaries" ResourceVariant="ko-kr" />
+      <Asset Guid="5e781b94a3dfc824b9cae34db2ba284e" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="61f911c11741ceb4d82554592d7bdf4b" ResourceName="UI/UISprites/FightUI" />
       <Asset Guid="62af9e5c8f39cfa49af9e10ccf42f1da" ResourceName="UI/UISprites/Common" />
-      <Asset Guid="638ff8ae4a0d15047839cd265d3bc296" ResourceName="Music/Background" />
+      <Asset Guid="631ac77221afd31429b7a13225719678" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="638ff8ae4a0d15047839cd265d3bc296" ResourceName="Music/music_background" />
       <Asset Guid="63fe6ff9ab9e1433f8db4ebd940f2442" ResourceName="Materials" />
+      <Asset Guid="64a80c4cd3b0b9649bd904648ace445d" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="64f3bb52c6a54854688fcc656af2b1c9" ResourceName="DataTables" />
+      <Asset Guid="651f60823ec87864e8dc33fb828dc71f" ResourceName="UI/UISprites/FightUI" />
+      <Asset Guid="6534d41ed6dad2c4b8f7f65784bd5a5f" ResourceName="UI/UISprites/Common" />
+      <Asset Guid="6570abddb75ab93428912b5d88f25e6c" ResourceName="Music/music_ui" />
+      <Asset Guid="66f5e8d2e18724ed59148359dd808712" ResourceName="MainScene" />
+      <Asset Guid="675067424693e5b44b26799222efe736" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="68e2256fd27ee46e985848e3d2595791" ResourceName="MainScene" />
+      <Asset Guid="68f91fc990aad6a4c9b7e22657c12279" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="6a1c6d9461cc1714bb0f1f22c0bab3c3" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="6a44bf53b35077a4dab0a18f43e1f3dd" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="6b0fcef6d03724eaeac25b25a4b10f30" ResourceName="MainScene" />
+      <Asset Guid="6ba2258eca4ee464f8938942ff230eb3" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="6cbc2c323b77f804fb958fa4eca33998" ResourceName="UI/UISprites/Common" />
       <Asset Guid="6d9b42ac01f24bf4d98923573f103575" ResourceName="Textures" />
       <Asset Guid="6db0c8354d868834abf29840037591b1" ResourceName="Textures" />
+      <Asset Guid="6df481bae1d041441b0dc16eae17ba09" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="6e023ca4283b3a7469cd61d24c83048c" ResourceName="Textures" />
       <Asset Guid="6e3730451fa077346abd4ac642ea71d8" ResourceName="Textures" />
       <Asset Guid="6e5d026bf0652ed4380f6a66f4aa26c5" ResourceName="Textures" />
+      <Asset Guid="6e8f9346cdb35494fa6d2bfb2d167097" ResourceName="UI/UISprites/FightUI" />
+      <Asset Guid="6f8c7cd17c022d24488f15cb3621fbf7" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="71646ebaae78d43aeb8b53cacdb69671" ResourceName="Textures" />
       <Asset Guid="72e76810224064300b7d32e8322a5d12" ResourceName="Sounds" />
       <Asset Guid="738bdf56857a65f479c367c7b62c4ad7" ResourceName="Entities" />
+      <Asset Guid="73ab755f107bec348a6b6ce017e3c3f6" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="77cbb7c5404c10242ab59953e0746314" ResourceName="Fonts" />
+      <Asset Guid="7acfe9276e757214282a2ab71e9329f9" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="7bb3bc015078d9f48ae1004d9127f21b" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="7c5e55f4cae08574d8202da5256ed44e" ResourceName="UI/UIForms" />
+      <Asset Guid="7ca59a342a1f8bc4994a631f3c48f3b7" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="7d5f7699d6d1d48e485ac71126e12061" ResourceName="Entities" />
+      <Asset Guid="7e5e30c8e3c5b9f47b83b2862ec4ff67" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="7e6bdc71ad951204eaf07a6210eff18e" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="7e91cd9bad7babf4b975882a4b7453cb" ResourceName="Textures" />
       <Asset Guid="7eae0d2701845a54aa570b07c55dab44" ResourceName="Textures" />
       <Asset Guid="7f5aee8da226edf4991598327cb32ce0" ResourceName="UI/UISprites/Logos" />
+      <Asset Guid="7fb4867fef8c5ab408960a6088b3223e" ResourceName="UI/UISprites/Common" />
       <Asset Guid="7fd11dc5d29076d469d414dec2818f11" ResourceName="Configs" />
+      <Asset Guid="80b89593ac897ac45b79a5cd4b25fcb9" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="8116889b21cba3346b253ef8af13e3da" ResourceName="UI/UIForms" />
+      <Asset Guid="82e4c8d733428a84fb976f27bcb022ee" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="834bfaee90a9d4e04b1e8c1ca22cc88e" ResourceName="Entities" />
       <Asset Guid="836be25be3e1e8c41ae5545bc8a9a4d7" ResourceName="Textures" />
+      <Asset Guid="844f287b10a39674c9ab88ccc497ce4e" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="8527bc0a00a24f94390867375a357402" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="87d07566183517148925bbd1617b895d" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="884142e01fb80e14eb287780b125b1d4" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="8940b037a9b441c4cbd3d2b446838424" ResourceName="Materials" />
       <Asset Guid="8b1acacd22538f34cb85287a0781ea5e" ResourceName="DataTables" />
+      <Asset Guid="8b4674e9719e2e24a85fabd5b333584f" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="8bcea941aa07e69438418e7205e1fd45" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="8cf749fdfa5edc3478d16893efeaa0eb" ResourceName="Entities" />
+      <Asset Guid="8dfe74dde48d2244ea25ba089b5252fd" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="8e114ded6a865324588170636872943c" ResourceName="DataTables" />
       <Asset Guid="8e27380ee68aa4a219b4db9018e7da31" ResourceName="Materials" />
+      <Asset Guid="8ef5b961d43874a439a8960712bc150b" ResourceName="UI/UISprites/StartUI" />
+      <Asset Guid="900b0f9802f0ac24ebd52536e6046f92" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="9113b833d98c32043ab10af3aace2bf3" ResourceName="UI/UISprites/StartUI" />
       <Asset Guid="9143e2b62ad50488482f9b73672fc331" ResourceName="Entities" />
+      <Asset Guid="9187c98a20661164fa96de58770c4b3c" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="91f7afec85c4a4441b6771440476fbc3" ResourceName="UI/UISprites/FightUI" />
+      <Asset Guid="920af698cf8549940afb44d0c280bcd2" ResourceName="UI/UISprites/FightUI" />
+      <Asset Guid="92f20281797d9724783f90d77b87d9f4" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="955000b4d1441470e8cbf94f483228b5" ResourceName="Materials" />
+      <Asset Guid="9605e0d494c7711439f95dd1e9c2f29c" ResourceName="UI/UIForms" />
       <Asset Guid="97b1f8b25cca2bc458cb9d6127c8d186" ResourceName="Materials" />
+      <Asset Guid="97b593879b194f4409664ce1b5bcd9cb" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="97d117308cf86924289e81e7e71dd5dd" ResourceName="DataTables" />
+      <Asset Guid="990288a347c750e4589e670501a0a42d" ResourceName="Sounds" />
+      <Asset Guid="99124a2b28ffd7c429c37fbec603538e" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="9918dd1d8a4d7d34d9a59d0a5b9791e2" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="99a7e9959c4f2874dbf8527cf7cd6a44" ResourceName="UI/UISprites/Common" />
+      <Asset Guid="99c9720ab356a0642a771bea13969a05" ResourceName="Scenes" />
+      <Asset Guid="9a07301b266e8ff43b45d70a16460224" ResourceName="UI/UISprites/FightUI" />
       <Asset Guid="9afa958d6d8235941b9badb42aae4370" ResourceName="Meshes" />
       <Asset Guid="9b433f0bb7fef6f4085c316a0d88c307" ResourceName="DataTables" />
       <Asset Guid="9be2e1e45f4edd74c8764538ad306b78" ResourceName="Localization/Dictionaries" ResourceVariant="zh-cn" />
+      <Asset Guid="9bfde9677ae3f79419e40e70dce6e6d8" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="9c3961f379234354e813d7b38146424d" ResourceName="DataTables" />
       <Asset Guid="9c3faac13c8ced84a9f3018303b7bb98" ResourceName="DataTables" />
+      <Asset Guid="9cd4e8d92d866564fb721c8c8901f844" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="9db8bac5cf1410941809e07782d9b3c3" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="9ddab293e2a8af3499dac05f5fd6169c" ResourceName="Meshes" />
       <Asset Guid="9f847ec5e66e03e4ead1d3c5f7b510e8" ResourceName="UI/UISprites/Common" />
       <Asset Guid="a019ae3af8e864616b85773c509f5285" ResourceName="Sounds" />
+      <Asset Guid="a05e1c9477bd1f044baa416096b4aeaa" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="a23eef5e20ff8cb46adf33491fc443fb" ResourceName="Materials" />
+      <Asset Guid="a2509c7925e747f458c34a62a3c66b95" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="a33e23ae848110243820cda82120b105" ResourceName="DataTables" />
+      <Asset Guid="a4dfdcf5a409dc4419735c318367a218" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="a5441f61fa449744fb261315ad611897" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="a6d58f54ce5934781962a4f887e834f3" ResourceName="Entities" />
       <Asset Guid="a71f8bb1b1b2c51438e2bafc884cb02c" ResourceName="DataTables" />
       <Asset Guid="a7b030cffa2dc44478c14e49a22771c2" ResourceName="Materials" />
+      <Asset Guid="a847d828c8245b847a1bcbb48c3052d4" ResourceName="UI/UISprites/FightUI" />
+      <Asset Guid="a8998581198022d4798133e4661d1f53" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="a8c07bbe04fdaf04b80e27f651a8edd6" ResourceName="UI/UISprites/Common" />
+      <Asset Guid="a93a5c74ec6b9404bb436d61b9a96db8" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="aa20a328eb9c60b48b62205d6bafa777" ResourceName="UI/UIForms" />
+      <Asset Guid="aaf9d19728df0b941a9fafed0965b6ac" ResourceName="Fonts" />
       <Asset Guid="ab45c3f613f388d43bbf43ec05eb92e2" ResourceName="UI/UISprites/Common" />
       <Asset Guid="ab4774faf71b57a40a29a9e902403fe3" ResourceName="DataTables" />
       <Asset Guid="abd1565e9e268f04cac3631d022b4ace" ResourceName="Entities" />
+      <Asset Guid="ac14efdbd595a9b40bd1ebc51101bf8f" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="ad093dd20edc22440be7070634614025" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="ad56aae2bb0f2ce4a86711287e14e223" ResourceName="DataTables" />
       <Asset Guid="ae6a7f967521769458b0913fa39caaf4" ResourceName="Textures" />
+      <Asset Guid="af4a56426d6de7b44abbc7fc94fe1ae2" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="af90dde0700e4ed4aae371270e5654ca" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="afc18fc39ade3744397c0c993b57be53" ResourceName="Entities" />
       <Asset Guid="b031b4f2980561542a7f7ba41391edc3" ResourceName="Scenes" />
+      <Asset Guid="b0b8b516202748844b50ededad2e2eae" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="b0c7cf51d3fecb446ab93bf854419715" ResourceName="Materials" />
+      <Asset Guid="b1648f4beb7b3dc4e8e8eb52daa50e41" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="b21c2438742d47142ac2e4a7af2a68d9" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="b2cebe04343227945bab3729ca9a3493" ResourceName="DataTables" />
+      <Asset Guid="b3a614bafbeca9d45b56a96b3e3e4f7f" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="b3afc2db1d53cc445ba35cc91e071c3f" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="b4aa87e8b5a8fc742b61a85847ba624a" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="b5877dbf2f3aae746a4ce5306da05249" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="b5aa9c09a1224d34d8407765e4ee7832" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="b6afa139cd9c96a42aceb235593b21e4" ResourceName="UI/UIForms" />
+      <Asset Guid="b76a96909f9fc584d9488af2c96cef4a" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="b7a5b69ea8d6ba948b4102604eb40b02" ResourceName="UI/UISprites/FightUI" />
+      <Asset Guid="b7e77c87f408ecd4b9f594ad25f0e286" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="ba157ba55f72c424a9e88f3c029997c4" ResourceName="Textures" />
       <Asset Guid="baedbbad82997f445a8cb4da210404e0" ResourceName="Meshes" />
+      <Asset Guid="bba1f9ba0fd9040409581e1457a25554" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="bbfd75fe6fe00e1448fe988173ede7f9" ResourceName="UI/UIForms" />
+      <Asset Guid="bc6b9a874ae84ae41853f18ba255c0bd" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="bd0993c3fa088b3499502ff5f1235e18" ResourceName="UI/UISprites/FightUI" />
+      <Asset Guid="be39766f45cbcf34e90107b834ba4912" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="bf75b984df8a84987bcf3a8bf6e2862d" ResourceName="Sounds" />
+      <Asset Guid="c125f47a1e74ac449a0fcf893b8f983b" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="c547624e174de984882f0a14b4bb32e1" ResourceName="Materials" />
       <Asset Guid="c58c9afddbd36d14d837fa218d772996" ResourceName="Materials" />
       <Asset Guid="c7d1e11dd37634b48a9dd4012b8e4306" ResourceName="UI/UISounds" />
-      <Asset Guid="caa829ab2ffc71340a69253afdf58365" ResourceName="Music/Menu" />
+      <Asset Guid="caa829ab2ffc71340a69253afdf58365" ResourceName="Music/music_menu" />
       <Asset Guid="cadd0764941c8b646ae79b51d0ea8285" ResourceName="UI/UISprites/Common" />
+      <Asset Guid="cbc6fa5697f550d4f893838156a4e122" ResourceName="Sounds" />
       <Asset Guid="cfe53cf384344bd47a8680f8c5f97a7b" ResourceName="DataTables" />
+      <Asset Guid="d2eccab9736a7ca40bc4b4d23bcb901b" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="d5a3e9f2d8b38b24ba6d3b6e38b0078c" ResourceName="UI/UISprites/Common" />
+      <Asset Guid="d652eebfb84f3f741981a18f2476649f" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="d6d35b622076d814c9a75475e9ddbe03" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="d786078a083d18e4a904e4493b8852a0" ResourceName="Sounds" />
+      <Asset Guid="d82f00c3349c76248beaccd99b982ecc" ResourceName="UI/UISprites/Common" />
+      <Asset Guid="d8b6ccf08f107b942bc35d49c785848f" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="d9808401c68af274a8edfbed3d1b53c7" ResourceName="Meshes" />
       <Asset Guid="db58965402f12ed47b4dad61a9e48c9d" ResourceName="UI/UISprites/Icons" />
+      <Asset Guid="dbe0b3ce3ca64334f8633405507220de" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="dd22597f955d30848ae8a3421e6e5333" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="dd6ccfbfcce8f994593f66c05deb1237" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="e033a6366a66e83429e3c65cd7ab6c84" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="e0792649e7774a24d8e7cceba0231c61" ResourceName="DataTables" />
+      <Asset Guid="e14253b8bf39d974fb0fc8d5c78e5b4a" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="e147845e66f41ff4b8b1a4f2a2e0e57e" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="e28544a21a4f6b648bc3131b5d5fa56c" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="e40581d931711b24d85e13630879a0b6" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="e415965f86fd7874fa374435d7d1c025" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="e44208efa625d604a8afb5d99003d49f" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="e54e4b068b2b099419be08a276d9c52a" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="e5ca26c53b6ab8a46b52817008d7c7fa" ResourceName="UI/UISprites/Icons" />
       <Asset Guid="e82837c9099f69a48b48fc44eb8d119d" ResourceName="UI/UISprites/Common" />
       <Asset Guid="e830964cdb85ff3429bca484c16bab44" ResourceName="UI/UISounds" />
       <Asset Guid="e85864330b68dde498dcb6e8711815d3" ResourceName="UI/UISprites/Common" />
+      <Asset Guid="e9127ce4d749a1140a0ddbd6b834679e" ResourceName="UI/UISprites/StartUI" />
+      <Asset Guid="ea8a65399dd20694ab1522a9178a3a08" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="eabb37cb6d738b443b398b701a64cd88" ResourceName="Textures" />
+      <Asset Guid="f106a58371667f84e93d6e7670770d6c" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="f1123e740a18fd84d85fe037aaa46c81" ResourceName="UI/UISprites/FightUI" />
+      <Asset Guid="f179390ac44532e42b122b8d03bee50c" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="f24cc6ec8ab484f4dbed648fd1b81ebc" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="f2f4df0b7211e4c42a5638273525d8ee" ResourceName="UI/UISprites/Common" />
       <Asset Guid="f2f97a713beae744181ba934f9c4113a" ResourceName="DataTables" />
+      <Asset Guid="f338d2dea026bb84fabf02a359b74686" ResourceName="UI/UISprites/Common" />
       <Asset Guid="f36c72c738c55f741afcd674a0b1245f" ResourceName="Materials" />
       <Asset Guid="f438a72a91e1c3c4a9ced40888ffec96" ResourceName="UI/UISprites/Icons" />
+      <Asset Guid="f4c033420c1380a47a15b476176c93c5" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="f4ec271e525e14ca9927a07e6a2e153d" ResourceName="Entities" />
+      <Asset Guid="f5a9c4cbb3a2d3c4b93c43958f88c1a0" ResourceName="UI/UISprites/MainUI" />
       <Asset Guid="f6db5bbdfe0e9894798706814cd6b336" ResourceName="Textures" />
+      <Asset Guid="f720ad878e3591745aa2f2e58611e30f" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="f784c1811448b5d41a723ada06c62d36" ResourceName="UI/UISprites/MainUI" />
+      <Asset Guid="fd1f09db13a2c4a4586eb591ad836ad4" ResourceName="MainScene" />
       <Asset Guid="fd3cbf51780694849b9b019b36a3938e" ResourceName="Textures" />
+      <Asset Guid="fd622d15ec34fe546b73432455998368" ResourceName="UI/UISprites/FightUI" />
       <Asset Guid="fdb5edd099d06b045af609ba3172400a" ResourceName="DataTables" />
       <Asset Guid="fedd25a3c60e7ae499fc6efab9ee180b" ResourceName="Entities" />
     </Assets>
