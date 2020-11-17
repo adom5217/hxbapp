@@ -14,6 +14,7 @@ namespace StarForce
 {
     public class MatchForm : UGuiForm
     {
+        private ProcedureMenu m_ProcedureMenu = null;
         // 匹配的6个玩家
         [SerializeField]
         public List<MatchFormPlayer> matchFormPlayers;
@@ -26,13 +27,24 @@ namespace StarForce
         /// </summary>
         public void OnJoinButtonClick()
         {
-            GameEntry.UI.OpenUIForm(UIFormId.RoleForm, playerDatas);
+            if (bMatching)
+            {
+                Log.Debug("匹配中...");
+                return;
+            }
+            GameEntry.UI.OpenUIForm(UIFormId.RoleForm, m_ProcedureMenu);
         }
 
-
+        bool bMatching = false;
         protected override void OnOpen(object userData)
         {
             base.OnOpen(userData);
+            m_ProcedureMenu = (ProcedureMenu)userData;
+            if (m_ProcedureMenu == null)
+            {
+                Log.Warning("ProcedureMenu is invalid when open MenuForm.");
+                return;
+            }
             StartCoroutine(PlayersJoin());
         }
         /// <summary>
@@ -41,6 +53,7 @@ namespace StarForce
         /// <returns></returns>
         IEnumerator PlayersJoin()
         {
+            bMatching = true;
             playerDatas = GameData.instance.CreatPlayers();
             // TODO
             // 先清掉名字和头像图片，在模拟玩家加入
@@ -54,18 +67,16 @@ namespace StarForce
                 yield return new WaitForSecondsRealtime(Random.Range(0.0f, 2f));
                 matchFormPlayers[i].SetMatchFormPlayerInfo(playerDatas[i].nickName, sprites[Random.Range(0, 5)]);
             }
-            yield return 0;
+            bMatching = false;
         }
-        protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
-        {
-
-        }
+       
         protected override void OnResume()
         {
         }
         protected override void OnClose(bool isShutdown, object userData)
         {
             base.OnClose(isShutdown, userData);
+            m_ProcedureMenu = null;
         }
     }
 }

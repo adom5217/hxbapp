@@ -19,6 +19,7 @@ namespace StarForce
     /// </summary>
     public class RoleForm : UGuiForm
     {
+        private ProcedureMenu m_ProcedureMenu = null;
         // 3个面板的游戏物体
         public List<GameObject> selectGroups;
         // 3个按钮
@@ -37,7 +38,7 @@ namespace StarForce
         //------------------------------
 
         // 玩家数据列表
-        private List<PlayerData> playerDatas;
+        private PlayerData playerData;
         // 选择的角色index
         private int selectedRoleIndex;
         // 选择的皮肤
@@ -47,8 +48,7 @@ namespace StarForce
         // 点击确认按钮
         public void ConfirmButtonClick()
         {
-
-
+            m_ProcedureMenu.StartGame();
         }
 
         //  点击重置按钮
@@ -198,28 +198,29 @@ namespace StarForce
         protected override void OnOpen(object userData)
         {
             base.OnOpen(userData);
+            m_ProcedureMenu = (ProcedureMenu)userData;
+            if (m_ProcedureMenu == null)
+            {
+                Log.Warning("ProcedureMenu is invalid when open MenuForm.");
+                return;
+            }
             // 玩家数据赋值
-            playerDatas = (List<PlayerData>)userData;
+            playerData = GameData.instance.GetPlayerSelf();
             // 设置上玩家名字
-            this.playerName.text = playerDatas[0].nickName;
+            this.playerName.text = playerData.nickName;
             // 默认选择第一个
             this.ChangeGroup(0);
             // 设置道具栏
             this.InitPropGroupList();
 
         }
-        protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
-        {
-
-        }
         protected override void OnResume()
         {
-
         }
         protected override void OnClose(bool isShutdown, object userData)
         {
             base.OnClose(isShutdown, userData);
-            GameEntry.UI.OpenUIForm(UIFormId.MatchForm);
+            m_ProcedureMenu = null;
         }
 
         // 分页

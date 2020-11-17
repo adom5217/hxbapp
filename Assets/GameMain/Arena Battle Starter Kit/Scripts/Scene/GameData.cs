@@ -5,34 +5,42 @@ using UnityEngine;
 public class GameData : MonoBehaviour
 {
     public static GameData instance;
-    private int uuid=100;
+    private int uuid = 100;
 
     public int mSkillId = 0; //技能id
     public static int MaxPlayer = 6;
     private List<PlayerData> mPlayers = new List<PlayerData>();
+
+    public static int MaxItem = 6;
+    public static int MaxDress = 14;
+    public static int MaxSkin = 12;
     void Awake()
     {
         instance = this;
-        
+
     }
-    
+
     private PlayerData GetPlayer(int i)
     {
         var pp = new PlayerData();
         pp.uid = uuid++;
-        if(i==0)
+        if (i == 0)
         {
             pp.nickName = "萌宠者";
         }
         else
         {
-            pp.nickName = "Bot-"+i;
-            pp.skinId = Random.Range(0,6);
-            pp.itemId = Random.Range(0,6);
-            pp.dressId = Random.Range(0,6);
+            pp.nickName = "Bot-" + i;
+            pp.skinId = Random.Range(0, 6);
+            pp.itemId = Random.Range(0, 6);
+            pp.dressId = Random.Range(0, 6);
         }
-        
+
         return pp;
+    }
+    public PlayerData GetPlayerSelf()
+    {
+        return mPlayers[0];
     }
 
     //第一个玩家自己
@@ -46,21 +54,21 @@ public class GameData : MonoBehaviour
         return mPlayers;
     }
     //设置道具
-    public void SetItem(int id)
+    public void SetItem(int id,int index =0)
     {
-        mPlayers[0].itemId = id;
+        mPlayers[index].itemId = id;
 
     }
     //设置皮肤
-    public void SetSkin(int id)
+    public void SetSkin(int id,int index = 0)
     {
-        mPlayers[0].skinId = id;
+        mPlayers[index].skinId = id;
 
     }
     //设置装饰
-    public void SetDress(int id)
+    public void SetDress(int id, int index = 0)
     {
-        mPlayers[0].dressId = id;
+        mPlayers[index].dressId = id;
 
     }
 

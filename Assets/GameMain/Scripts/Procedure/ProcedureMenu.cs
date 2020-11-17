@@ -14,7 +14,7 @@ namespace StarForce
     public class ProcedureMenu : ProcedureBase
     {
         private bool m_StartGame = false;
-        private MenuForm m_MenuForm = null;
+        //private MenuForm m_MenuForm = null;
 
         public override bool UseNativeDialog
         {
@@ -34,7 +34,7 @@ namespace StarForce
         {
             base.OnEnter(procedureOwner);
 
-            GameEntry.Event.Subscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
+            //GameEntry.Event.Subscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
 
             m_StartGame = false;
             GameEntry.UI.OpenUIForm(UIFormId.MenuForm, this);
@@ -44,13 +44,13 @@ namespace StarForce
         {
             base.OnLeave(procedureOwner, isShutdown);
 
-            GameEntry.Event.Unsubscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
+            //GameEntry.Event.Unsubscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
 
-            if (m_MenuForm != null)
-            {
-                m_MenuForm.Close(isShutdown);
-                m_MenuForm = null;
-            }
+            //if (m_MenuForm != null)
+            //{
+            //    m_MenuForm.Close(isShutdown);
+            //    m_MenuForm = null;
+            //}
         }
 
         protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)
@@ -73,7 +73,7 @@ namespace StarForce
                 return;
             }
 
-            m_MenuForm = (MenuForm)ne.UIForm.Logic;
+            //m_MenuForm = (MenuForm)ne.UIForm.Logic;
         }
     }
 }
