@@ -8,6 +8,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityGameFramework.Runtime;
 
 namespace StarForce
@@ -20,7 +21,8 @@ namespace StarForce
         public List<MatchFormPlayer> matchFormPlayers;
         [SerializeField]
         public List<Sprite> sprites;
-
+        public Text title;
+        public GameObject joinButton;
         private List<PlayerData> playerDatas;
         /// <summary>
         /// 加入按钮点击
@@ -30,6 +32,10 @@ namespace StarForce
             if (bMatching)
             {
                 Log.Debug("匹配中...");
+                DialogParams dialogParams = new DialogParams();
+                dialogParams.Mode = 1;
+                dialogParams.Message = GameEntry.Localization.GetString("Match.Matching");
+                GameEntry.UI.OpenUIForm(UIFormId.DialogForm, dialogParams);
                 return;
             }
             GameEntry.UI.OpenUIForm(UIFormId.RoleForm, m_ProcedureMenu);
@@ -45,6 +51,7 @@ namespace StarForce
                 Log.Warning("ProcedureMenu is invalid when open MenuForm.");
                 return;
             }
+            title.text = GameEntry.Localization.GetString("Match.Matching");
             StartCoroutine(PlayersJoin());
         }
         /// <summary>
@@ -67,6 +74,7 @@ namespace StarForce
                 yield return new WaitForSecondsRealtime(Random.Range(0.0f, 2f));
                 matchFormPlayers[i].SetMatchFormPlayerInfo(playerDatas[i].nickName, sprites[Random.Range(0, 5)]);
             }
+            title.text = GameEntry.Localization.GetString("Match.Success");
             bMatching = false;
         }
        
