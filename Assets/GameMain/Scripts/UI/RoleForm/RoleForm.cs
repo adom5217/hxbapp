@@ -52,6 +52,7 @@ namespace StarForce
         private int selectedDressIndex;
         // 选择的道具
         private int selectedPropIndex;
+
         // 点击确认按钮
         public void ConfirmButtonClick()
         {
@@ -61,28 +62,13 @@ namespace StarForce
         //  点击重置按钮
         public void ResetButtonClick()
         {
-
-
-        }
-        //  选择角色
-        public void OnRoleSelected(int roleIndex)
-        {
-            this.selectedRoleIndex = roleIndex;
-            if (!roleToggle[roleIndex].isOn)
-            {
-                roleToggle[roleIndex].isOn = true;
-            }
-            GameData.instance.SetModel(roleIndex);
-
-            Log.Debug("设置模型:" + roleIndex);
-
-            InitDressGroupList();
+            Vector3 position = dressContent.localPosition;
+            position.x = 0;
+            dressContent.localPosition = position;
         }
 
-        /// <summary>
-        /// 切换选择面板
-        /// </summary>
-        /// <param name="groupIndex"></param>
+
+        // 切换选择面板
         public void ChangeGroup(int groupIndex)
         {
             if (selectGroups == null || selectGroups.Count <= 0)
@@ -120,24 +106,7 @@ namespace StarForce
             }
 
         }
-        private void OnDressToggleOn(int selectDressIndex, Toggle toggle)
-        {
-            //  判断是否解锁，没解锁提示弹广告
-            if (!GameData.instance.openSkins.Contains(selectDressIndex))
-            {
-                Debug.Log("没解锁 roleIndex:" + selectedRoleIndex + " selectDressIndex:" + selectDressIndex);
-                return;
-            }
-            this.selectedDressIndex = selectDressIndex;
-            toggle.isOn = true;
-
-            Debug.Log("roleIndex:" + selectedRoleIndex + " selectDressIndex:" + selectDressIndex);
-
-            GameData.instance.SetSkin(selectDressIndex);
-
-            Log.Debug("设置装饰:" + selectDressIndex);
-
-        }
+        // 清除Scroll View的content
         private void ClearGroupContent(int groupIndex)
         {
             var content = selectGroups[groupIndex].transform.Find("Scroll View/Viewport/Content");
@@ -213,6 +182,24 @@ namespace StarForce
             }
             OnDressToggleOn(0, firstToggle);//设置勾选第一个
         }
+        // 选择皮肤
+        private void OnDressToggleOn(int selectDressIndex, Toggle toggle)
+        {
+            //  判断是否解锁，没解锁提示弹广告
+            if (!GameData.instance.openSkins.Contains(selectDressIndex))
+            {
+                Debug.Log("没解锁 roleIndex:" + selectedRoleIndex + " selectDressIndex:" + selectDressIndex);
+                return;
+            }
+            this.selectedDressIndex = selectDressIndex;
+            toggle.isOn = true;
+
+            Debug.Log("roleIndex:" + selectedRoleIndex + " selectDressIndex:" + selectDressIndex);
+
+            GameData.instance.SetSkin(selectDressIndex);
+
+            Log.Debug("设置装饰:" + selectDressIndex);
+        }
         private void InitPropGroupList()
         {
             ClearGroupContent(2);
@@ -249,6 +236,7 @@ namespace StarForce
             }
             OnPropToggleOn(0, firstToggle);//设置勾选第一个
         }
+        // 选择道具
         private void OnPropToggleOn(int selectPropIndex, Toggle toggle)
         {
             //  判断是否解锁，没解锁提示弹广告
@@ -263,6 +251,36 @@ namespace StarForce
             Debug.Log("roleIndex:" + selectedRoleIndex + " selectPropIndex:" + selectPropIndex);
             GameData.instance.SetItem(selectPropIndex);
             Log.Debug("设置装饰:" + selectPropIndex);
+        }
+        private void InitRoleGroupList()
+        {
+            for (int i = 0; i < selectGroups[0].transform.childCount; i++)
+            {
+                if (GameData.instance.openModels.Contains(i))
+                {
+                    selectGroups[0].transform.GetChild(i).GetChild(2).gameObject.SetActive(false);
+                }
+            }
+            this.OnRoleSelected(0);
+        }
+        //  选择角色
+        public void OnRoleSelected(int roleIndex)
+        {
+            if (!GameData.instance.openModels.Contains(roleIndex))
+            {
+                Debug.Log("没解锁 roleIndex:" + roleIndex);
+                return;
+            }
+            this.selectedRoleIndex = roleIndex;
+            if (!roleToggle[roleIndex].isOn)
+            {
+                roleToggle[roleIndex].isOn = true;
+            }
+            GameData.instance.SetModel(roleIndex);
+
+            Log.Debug("设置模型:" + roleIndex);
+
+            InitDressGroupList();
         }
         protected override void OnOpen(object userData)
         {
@@ -279,7 +297,8 @@ namespace StarForce
             this.playerName.text = playerData.nickName;
             // 默认选择第一个
             this.ChangeGroup(0);
-            this.OnRoleSelected(0);
+            // 初始化角色栏
+            this.InitRoleGroupList();
             // 初始化道具栏
             this.InitPropGroupList();
         }
