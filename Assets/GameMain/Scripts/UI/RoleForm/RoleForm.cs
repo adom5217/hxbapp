@@ -55,11 +55,16 @@ namespace StarForce
         public void ResetButtonClick()
         {
 
+            
         }
         //  选择角色
         public void OnRoleSelected(int roleIndex)
         {
             this.selectedRoleIndex = roleIndex;
+
+            GameData.instance.SetModel(roleIndex);
+
+            Log.Debug("设置模型:"+roleIndex);
         }
 
         /// <summary>
@@ -129,9 +134,10 @@ namespace StarForce
                 }
                 List<Sprite> dressSpriteList = dressSprites.FindAll(e => e.name.StartsWith(dressPrefix));
                 Transform selectToggle = null;
+                var Content = selectGroups[1].transform.Find("Scroll View/Viewport/Content"); //不建议写这种很长，直接绑定在UI上
                 foreach (Sprite dressItem in dressSpriteList)
                 {
-                    GameObject go = Instantiate(dressGroupItemPrefab, selectGroups[1].transform.Find("Scroll View").Find("Viewport").Find("Content"));
+                    GameObject go = Instantiate(dressGroupItemPrefab, Content);
                     Transform image = go.transform.GetChild(0);//图片
                     Transform toggle = go.transform.GetChild(1);//勾选框
                     Transform lockImg = go.transform.GetChild(2);//锁
@@ -155,6 +161,10 @@ namespace StarForce
                 this.selectedDressIndex = selectDressIndex;
                 // TODO 判断是否解锁，没解锁提示弹广告
                 Debug.Log("roleIndex:" + selectedRoleIndex + " selectDressIndex:" + selectDressIndex);
+
+                GameData.instance.SetSkin(selectDressIndex);
+
+                Log.Debug("设置装饰:" + selectDressIndex);
             }
         }
         private void ClearGroupContent(int groupIndex)
@@ -193,6 +203,11 @@ namespace StarForce
                 this.selectedPropIndex = selectPropIndex;
                 // TODO 判断是否解锁，没解锁提示弹广告
                 Debug.Log("roleIndex:" + selectedRoleIndex + " selectPropIndex:" + selectPropIndex);
+
+                GameData.instance.SetItem(selectPropIndex);
+
+                Log.Debug("设置装饰:" + selectPropIndex);
+
             }
         }
         protected override void OnOpen(object userData)
