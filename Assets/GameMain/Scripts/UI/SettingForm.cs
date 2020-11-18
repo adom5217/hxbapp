@@ -49,6 +49,9 @@ namespace StarForce
 
         private Language m_SelectedLanguage = Language.Unspecified;
 
+        public Sprite openSprite;
+        public Sprite closeSprite;
+
         public void OnMusicMuteChanged(bool isOn)
         {
             GameEntry.Sound.Mute("Music", !isOn);

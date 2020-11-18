@@ -31,6 +31,10 @@ namespace StarForce
         public List<Toggle> roleToggle;
         // 3个按钮
         public List<Transform> selectButtons;
+        // 左按钮
+        public Transform leftButton;
+        // 右按钮
+        public Transform rightButton;
         // 玩家名字
         public Text playerName;
         // 角色皮肤
@@ -62,12 +66,41 @@ namespace StarForce
         //  点击重置按钮
         public void ResetButtonClick()
         {
-            Vector3 position = dressContent.localPosition;
-            position.x = 0;
-            dressContent.localPosition = position;
+
         }
 
-
+        public void OnLeftButtonClick()
+        {
+            if (dressContent.gameObject.activeInHierarchy)
+            {
+                Vector3 position = dressContent.localPosition;
+                position.x = position.x + 270 >= 0 ? 0 : position.x + 270;
+                dressContent.localPosition = position;
+            }
+            else if (propContent.gameObject.activeInHierarchy)
+            {
+                Vector3 position = propContent.localPosition;
+                position.x = position.x + 270 >= 0 ? 0 : position.x + 270;
+                propContent.localPosition = position;
+            }
+        }
+        public void OnRightButtonClick()
+        {
+            if (dressContent.gameObject.activeInHierarchy)
+            {
+                Vector3 position = dressContent.localPosition;
+                position.x = position.x - 270 <= -dressContent.GetComponent<RectTransform>().sizeDelta.x ?
+                    -dressContent.GetComponent<RectTransform>().sizeDelta.x : position.x - 270;
+                dressContent.localPosition = position;
+            }
+            else if (propContent.gameObject.activeInHierarchy)
+            {
+                Vector3 position = propContent.localPosition;
+                position.x = position.x - 270 <= -propContent.GetComponent<RectTransform>().sizeDelta.x ?
+                    -propContent.GetComponent<RectTransform>().sizeDelta.x : position.x - 270;
+                propContent.localPosition = position;
+            }
+        }
         // 切换选择面板
         public void ChangeGroup(int groupIndex)
         {
@@ -103,6 +136,16 @@ namespace StarForce
                     selectButtons[i].GetChild(0).gameObject.SetActive(true);
                     selectButtons[i].GetChild(1).gameObject.SetActive(false);
                 }
+            }
+            if (groupIndex == 0)
+            {
+                rightButton.gameObject.SetActive(false);
+                leftButton.gameObject.SetActive(false);
+            }
+            else
+            {
+                rightButton.gameObject.SetActive(true);
+                leftButton.gameObject.SetActive(true);
             }
 
         }
@@ -165,6 +208,7 @@ namespace StarForce
                 commonButton.m_OnClick.AddListener(() =>
                 {
                     OnDressToggleOn(dressSpriteList.IndexOf(dressItem), toggle.GetComponent<Toggle>());
+                    PlayUISound(10001);
                 });
                 image.GetComponent<Image>().sprite = dressItem;//设置图片
                 toggle.GetComponent<Toggle>().group = selectGroups[1].transform.GetComponent<ToggleGroup>();//设置组
@@ -220,6 +264,7 @@ namespace StarForce
                 commonButton.m_OnClick.AddListener(() =>
                 {
                     OnPropToggleOn(propSprites.IndexOf(propSprite), toggle.GetComponent<Toggle>());
+                    PlayUISound(10001);
                 });
                 image.GetComponent<Image>().sprite = propSprite;//设置图片
                 toggle.GetComponent<Toggle>().group = selectGroups[2].transform.GetComponent<ToggleGroup>();
