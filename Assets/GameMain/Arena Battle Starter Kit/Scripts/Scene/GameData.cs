@@ -27,7 +27,15 @@ public class GameData : MonoBehaviour
         openItems.Add(0);
         openSkins.Add(0);
     }
-
+    //本地保存读取
+    public void Read()
+    {
+    
+    }
+    public void Save()
+    {
+        
+    }
     private PlayerData GetPlayer(int i)
     {
         var pp = new PlayerData();

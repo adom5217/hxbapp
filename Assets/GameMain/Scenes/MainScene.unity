@@ -1971,9 +1971,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UnitItems:
-  - {fileID: 1686398150023464, guid: a44aac6d62ec81641ae7988fc6793aac, type: 3}
+  - {fileID: 1686398150023464, guid: b1ff0f386f2e71e47b3097f81051a8f8, type: 3}
+  - {fileID: 1686398150023464, guid: bc596cc73d873764aac18c5b0da9fce3, type: 3}
   - {fileID: 1686398150023464, guid: 68bee96669b1f6c4d83c19bef0927f87, type: 3}
+  - {fileID: 1686398150023464, guid: 03aec5089f0223141968f3a8b3db3bc8, type: 3}
   - {fileID: 1686398150023464, guid: c7ab511a32488cd429fae1e721b2b06d, type: 3}
+  - {fileID: 1686398150023464, guid: a44aac6d62ec81641ae7988fc6793aac, type: 3}
   Design: {fileID: 299959205}
   UnitsContainer: {fileID: 1815480655}
   PlayerSpawnPosition: {fileID: 753199411}
