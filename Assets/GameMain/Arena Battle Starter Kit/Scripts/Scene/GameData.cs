@@ -10,9 +10,9 @@ public class GameData : MonoBehaviour
     public int mSkillId = 0; //技能id
     public static int MaxPlayer = 6;
     private List<PlayerData> mPlayers = new List<PlayerData>();
-
+    public static int MaxModel= 6;
     public static int MaxItem = 9;
-    public static int MaxDress = 14;
+    public static int MaxDress = 12;
     public static int MaxSkin = 14;
 
     //设置开放时数据添加入数组
@@ -47,6 +47,7 @@ public class GameData : MonoBehaviour
         else
         {
             pp.nickName = "Bot-" + i;
+            pp.model = Random.Range(0, MaxModel);
             pp.skinId = Random.Range(0, MaxSkin);
             pp.itemId = Random.Range(0, MaxItem);
             pp.dressId = Random.Range(0, MaxDress);
