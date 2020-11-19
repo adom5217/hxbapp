@@ -17,7 +17,7 @@ public class StageItemCtrl : MonoBehaviour {
 
 	}
 
-    public void Init()
+    public void StartInit()
     {
         this.SpawnOurTeam();
         this.SpawnEnemyTeam();

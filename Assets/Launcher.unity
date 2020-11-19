@@ -958,6 +958,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mSkillId: 0
+  openModels: 
+  openItems: 
+  openSkins: 
 --- !u!1 &1852670052
 GameObject:
   m_ObjectHideFlags: 0

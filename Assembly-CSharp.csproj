@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\AnimUICtrl.cs" />
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\AnimatorCtrl.cs" />
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\CameraController.cs" />
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\DressUp.cs" />

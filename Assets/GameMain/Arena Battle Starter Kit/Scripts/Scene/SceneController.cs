@@ -30,7 +30,6 @@ public class SceneController : MonoBehaviour {
         Physics.IgnoreLayerCollision(11, 11); //Layer 11 - Player
 
 
-        this.Design.SetActive(false);
         this._unitItemInstances = new Dictionary<int, UnitItemBaseCtrl>();
     }
 
@@ -41,8 +40,11 @@ public class SceneController : MonoBehaviour {
 
     public void InitStage()
     {
-        this.Stage.Init();
-        if(UIController.instance)
+        this.Stage.StartInit();
+
+        this.Design.SetActive(false);
+
+        if (UIController.instance)
             UIController.instance.ShowGameOverlayWindow();
     }
 
