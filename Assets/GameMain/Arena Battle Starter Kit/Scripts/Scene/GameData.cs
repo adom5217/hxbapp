@@ -39,9 +39,9 @@ public class GameData : MonoBehaviour
         else
         {
             pp.nickName = "Bot-" + i;
-            pp.skinId = Random.Range(0, 6);
-            pp.itemId = Random.Range(0, 6);
-            pp.dressId = Random.Range(0, 6);
+            pp.skinId = Random.Range(0, MaxSkin);
+            pp.itemId = Random.Range(0, MaxItem);
+            pp.dressId = Random.Range(0, MaxDress);
         }
 
         return pp;
