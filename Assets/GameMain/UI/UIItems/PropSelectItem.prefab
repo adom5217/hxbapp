@@ -393,6 +393,7 @@ GameObject:
   - component: {fileID: 7889747512009183127}
   - component: {fileID: 2783515842019977843}
   - component: {fileID: 5480376843009203275}
+  - component: {fileID: -550929814872694325}
   m_Layer: 5
   m_Name: PropSelectItem
   m_TagString: Untagged
@@ -459,6 +460,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-550929814872694325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7448480177528525421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5079836f95c2a44b96fa331487ebb70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnHover:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8078169088256955659
 GameObject:
   m_ObjectHideFlags: 0

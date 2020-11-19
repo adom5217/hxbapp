@@ -18,10 +18,10 @@ namespace StarForce
         private const float OnClickAlpha = 0.6f;
 
         [SerializeField]
-        private UnityEvent m_OnHover = null;
+        public UnityEvent m_OnHover = null;
 
         [SerializeField]
-        private UnityEvent m_OnClick = null;
+        public UnityEvent m_OnClick = null;
 
         private CanvasGroup m_CanvasGroup = null;
 

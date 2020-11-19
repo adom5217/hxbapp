@@ -9,6 +9,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityGameFramework.Runtime;
 
@@ -22,8 +23,18 @@ namespace StarForce
         private ProcedureMenu m_ProcedureMenu = null;
         // 3个面板的游戏物体
         public List<GameObject> selectGroups;
+        // 皮肤的content
+        public Transform dressContent;
+        // 道具的content
+        public Transform propContent;
+        // 角色选择的toggle
+        public List<Toggle> roleToggle;
         // 3个按钮
         public List<Transform> selectButtons;
+        // 左按钮
+        public Transform leftButton;
+        // 右按钮
+        public Transform rightButton;
         // 玩家名字
         public Text playerName;
         // 角色皮肤
@@ -45,6 +56,7 @@ namespace StarForce
         private int selectedDressIndex;
         // 选择的道具
         private int selectedPropIndex;
+
         // 点击确认按钮
         public void ConfirmButtonClick()
         {
@@ -55,22 +67,41 @@ namespace StarForce
         public void ResetButtonClick()
         {
 
-            
         }
-        //  选择角色
-        public void OnRoleSelected(int roleIndex)
+
+        public void OnLeftButtonClick()
         {
-            this.selectedRoleIndex = roleIndex;
-
-            GameData.instance.SetModel(roleIndex);
-
-            Log.Debug("设置模型:"+roleIndex);
+            if (dressContent.gameObject.activeInHierarchy)
+            {
+                Vector3 position = dressContent.localPosition;
+                position.x = position.x + 270 >= 0 ? 0 : position.x + 270;
+                dressContent.localPosition = position;
+            }
+            else if (propContent.gameObject.activeInHierarchy)
+            {
+                Vector3 position = propContent.localPosition;
+                position.x = position.x + 270 >= 0 ? 0 : position.x + 270;
+                propContent.localPosition = position;
+            }
         }
-
-        /// <summary>
-        /// 切换选择面板
-        /// </summary>
-        /// <param name="groupIndex"></param>
+        public void OnRightButtonClick()
+        {
+            if (dressContent.gameObject.activeInHierarchy)
+            {
+                Vector3 position = dressContent.localPosition;
+                position.x = position.x - 270 <= -dressContent.GetComponent<RectTransform>().sizeDelta.x ?
+                    -dressContent.GetComponent<RectTransform>().sizeDelta.x : position.x - 270;
+                dressContent.localPosition = position;
+            }
+            else if (propContent.gameObject.activeInHierarchy)
+            {
+                Vector3 position = propContent.localPosition;
+                position.x = position.x - 270 <= -propContent.GetComponent<RectTransform>().sizeDelta.x ?
+                    -propContent.GetComponent<RectTransform>().sizeDelta.x : position.x - 270;
+                propContent.localPosition = position;
+            }
+        }
+        // 切换选择面板
         public void ChangeGroup(int groupIndex)
         {
             if (selectGroups == null || selectGroups.Count <= 0)
@@ -95,120 +126,206 @@ namespace StarForce
                 {
                     selectButtons[i].SetLocalScaleX(1.2f);
                     selectButtons[i].SetLocalScaleY(1.2f);
+                    selectButtons[i].GetChild(0).gameObject.SetActive(false);// 隐藏白色字
+                    selectButtons[i].GetChild(1).gameObject.SetActive(true);//  显示金色字
                 }
                 else
                 {
                     selectButtons[i].SetLocalScaleX(1);
                     selectButtons[i].SetLocalScaleY(1);
+                    selectButtons[i].GetChild(0).gameObject.SetActive(true);
+                    selectButtons[i].GetChild(1).gameObject.SetActive(false);
                 }
             }
-            // 重新加载皮肤列表
-            if (groupIndex == 1)
+            if (groupIndex == 0)
             {
-                // 清除
-                ClearGroupContent(1);
-                string dressPrefix = "";
-                if (selectedRoleIndex == 0)
-                {
-                    dressPrefix = "H";
-                }
-                else if (selectedRoleIndex == 1)
-                {
-                    dressPrefix = "W";
-                }
-                else if (selectedRoleIndex == 2)
-                {
-                    dressPrefix = "G";
-                }
-                else if (selectedRoleIndex == 3)
-                {
-                    dressPrefix = "H";
-                }
-                else if (selectedRoleIndex == 4)
-                {
-                    dressPrefix = "G";
-                }
-                else
-                {
-                    throw new UnityException("不支持的角色ID");
-                }
-                List<Sprite> dressSpriteList = dressSprites.FindAll(e => e.name.StartsWith(dressPrefix));
-                Transform selectToggle = null;
-                var Content = selectGroups[1].transform.Find("Scroll View/Viewport/Content"); //不建议写这种很长，直接绑定在UI上
-                foreach (Sprite dressItem in dressSpriteList)
-                {
-                    GameObject go = Instantiate(dressGroupItemPrefab, Content);
-                    Transform image = go.transform.GetChild(0);//图片
-                    Transform toggle = go.transform.GetChild(1);//勾选框
-                    Transform lockImg = go.transform.GetChild(2);//锁
-                    image.GetComponent<Image>().sprite = dressItem;//设置图片
-                    toggle.GetComponent<Toggle>().group = selectGroups[1].transform.GetComponent<ToggleGroup>();
-                    toggle.GetComponent<Toggle>().onValueChanged.AddListener((bool isOn) => OnDressToggleOn(isOn, dressSpriteList.IndexOf(dressItem)));
-                    if (selectToggle == null)
-                    {
-                        selectToggle = dressSpriteList.IndexOf(dressItem) == 0 ? toggle : null;
-                    }
-                    // TODO 判断这个皮肤是否解锁
-                    // lockImg.gameObject.SetActive(false);
-                }
-                selectToggle.GetComponent<Toggle>().isOn = true;//设置勾选
+                rightButton.gameObject.SetActive(false);
+                leftButton.gameObject.SetActive(false);
             }
-        }
-        private void OnDressToggleOn(bool inOn, int selectDressIndex)
-        {
-            if (inOn)
+            else
             {
-                this.selectedDressIndex = selectDressIndex;
-                // TODO 判断是否解锁，没解锁提示弹广告
-                Debug.Log("roleIndex:" + selectedRoleIndex + " selectDressIndex:" + selectDressIndex);
-
-                GameData.instance.SetSkin(selectDressIndex);
-
-                Log.Debug("设置装饰:" + selectDressIndex);
+                rightButton.gameObject.SetActive(true);
+                leftButton.gameObject.SetActive(true);
             }
+
         }
+        // 清除Scroll View的content
         private void ClearGroupContent(int groupIndex)
         {
-            for (int i = 0; i < selectGroups[groupIndex].transform.Find("Scroll View").Find("Viewport").Find("Content").childCount; i++)
+            var content = selectGroups[groupIndex].transform.Find("Scroll View/Viewport/Content");
+            for (int i = 0; i < content.childCount; i++)
             {
-                Destroy(selectGroups[groupIndex].transform.Find("Scroll View").Find("Viewport").Find("Content").GetChild(i).gameObject);
+                Destroy(content.GetChild(i).gameObject);
             }
+        }
+
+        private void InitDressGroupList()
+        {
+            // 重新加载皮肤列表
+            // 清除
+            ClearGroupContent(1);
+            string dressPrefix = "";
+            if (selectedRoleIndex == 0)
+            {
+                dressPrefix = "H";
+            }
+            else if (selectedRoleIndex == 1)
+            {
+                dressPrefix = "W";
+            }
+            else if (selectedRoleIndex == 2)
+            {
+                dressPrefix = "G";
+            }
+            else if (selectedRoleIndex == 3)
+            {
+                dressPrefix = "H";
+            }
+            else if (selectedRoleIndex == 4)
+            {
+                dressPrefix = "G";
+            }
+            else
+            {
+                throw new UnityException("不支持的角色ID");
+            }
+            List<Sprite> dressSpriteList = dressSprites.FindAll(e => e.name.StartsWith(dressPrefix));
+            Toggle firstToggle = null;
+            foreach (Sprite dressItem in dressSpriteList)
+            {
+                if (dressSpriteList.IndexOf(dressItem) >= GameData.MaxSkin)
+                {
+                    break;
+                }
+                GameObject go = Instantiate(dressGroupItemPrefab, dressContent);
+
+                Transform image = go.transform.GetChild(0);//图片
+                Transform toggle = go.transform.GetChild(1);//勾选框
+                Transform lockImg = go.transform.GetChild(2);//锁
+                // 设置按钮事件
+                CommonButton commonButton = go.GetComponent<CommonButton>();
+                commonButton.m_OnClick = new UnityEvent();
+                commonButton.m_OnClick.AddListener(() =>
+                {
+                    OnDressToggleOn(dressSpriteList.IndexOf(dressItem), toggle.GetComponent<Toggle>());
+                    PlayUISound(10001);
+                });
+                image.GetComponent<Image>().sprite = dressItem;//设置图片
+                toggle.GetComponent<Toggle>().group = selectGroups[1].transform.GetComponent<ToggleGroup>();//设置组
+                toggle.GetComponent<Toggle>().isOn = false;
+                if (dressSpriteList.IndexOf(dressItem) == 0)// 默认选择第一个皮肤
+                {
+                    firstToggle = toggle.GetComponent<Toggle>();
+                }
+                // 判断是否解锁
+                if (GameData.instance.openSkins.Contains(dressSpriteList.IndexOf(dressItem)))
+                {
+                    lockImg.gameObject.SetActive(false);
+                }
+
+            }
+            OnDressToggleOn(0, firstToggle);//设置勾选第一个
+        }
+        // 选择皮肤
+        private void OnDressToggleOn(int selectDressIndex, Toggle toggle)
+        {
+            //  判断是否解锁，没解锁提示弹广告
+            if (!GameData.instance.openSkins.Contains(selectDressIndex))
+            {
+                Debug.Log("没解锁 roleIndex:" + selectedRoleIndex + " selectDressIndex:" + selectDressIndex);
+                return;
+            }
+            this.selectedDressIndex = selectDressIndex;
+            toggle.isOn = true;
+
+            Debug.Log("roleIndex:" + selectedRoleIndex + " selectDressIndex:" + selectDressIndex);
+
+            GameData.instance.SetSkin(selectDressIndex);
+
+            Log.Debug("设置装饰:" + selectDressIndex);
         }
         private void InitPropGroupList()
         {
             ClearGroupContent(2);
-            Transform selectToggle = null;
+            Toggle firstToggle = null;
             foreach (Sprite propSprite in propSprites)
             {
-                GameObject go = Instantiate(propGroupItemPrefab, selectGroups[2].transform.Find("Scroll View").Find("Viewport").Find("Content"));
+                if (propSprites.IndexOf(propSprite) >= GameData.MaxItem)
+                {
+                    break;
+                }
+                GameObject go = Instantiate(propGroupItemPrefab, propContent);
                 Transform image = go.transform.GetChild(0);//图片
                 Transform toggle = go.transform.GetChild(1);//勾选框
                 Transform lockImg = go.transform.GetChild(2);//锁
-                image.GetComponent<Image>().sprite = propSprite;//设置图片
-                toggle.GetComponent<Toggle>().group = selectGroups[1].transform.GetComponent<ToggleGroup>();
-                toggle.GetComponent<Toggle>().onValueChanged.AddListener((bool isOn) => OnPropToggleOn(isOn, propSprites.IndexOf(propSprite)));
-                if (selectToggle == null)
+                                                             // 设置按钮事件
+                CommonButton commonButton = go.GetComponent<CommonButton>();
+                commonButton.m_OnClick = new UnityEvent();
+                commonButton.m_OnClick.AddListener(() =>
                 {
-                    selectToggle = propSprites.IndexOf(propSprite) == 0 ? toggle : null;
+                    OnPropToggleOn(propSprites.IndexOf(propSprite), toggle.GetComponent<Toggle>());
+                    PlayUISound(10001);
+                });
+                image.GetComponent<Image>().sprite = propSprite;//设置图片
+                toggle.GetComponent<Toggle>().group = selectGroups[2].transform.GetComponent<ToggleGroup>();
+                toggle.GetComponent<Toggle>().isOn = false;
+                if (propSprites.IndexOf(propSprite) == 0)
+                {
+                    firstToggle = toggle.GetComponent<Toggle>();
                 }
-                // TODO 判断这个道具是否解锁
-                // lockImg.gameObject.SetActive(false);
+                // 判断是否解锁
+                if (GameData.instance.openItems.Contains(propSprites.IndexOf(propSprite)))
+                {
+                    lockImg.gameObject.SetActive(false);
+                }
             }
-            selectToggle.GetComponent<Toggle>().isOn = true;//设置勾选
+            OnPropToggleOn(0, firstToggle);//设置勾选第一个
         }
-        private void OnPropToggleOn(bool inOn, int selectPropIndex)
+        // 选择道具
+        private void OnPropToggleOn(int selectPropIndex, Toggle toggle)
         {
-            if (inOn)
+            //  判断是否解锁，没解锁提示弹广告
+            if (!GameData.instance.openItems.Contains(selectPropIndex))
             {
-                this.selectedPropIndex = selectPropIndex;
-                // TODO 判断是否解锁，没解锁提示弹广告
-                Debug.Log("roleIndex:" + selectedRoleIndex + " selectPropIndex:" + selectPropIndex);
-
-                GameData.instance.SetItem(selectPropIndex);
-
-                Log.Debug("设置装饰:" + selectPropIndex);
-
+                Debug.Log("没解锁 roleIndex:" + selectedRoleIndex + " selectPropIndex:" + selectPropIndex);
+                return;
             }
+            this.selectedPropIndex = selectPropIndex;
+            toggle.isOn = true;
+
+            Debug.Log("roleIndex:" + selectedRoleIndex + " selectPropIndex:" + selectPropIndex);
+            GameData.instance.SetItem(selectPropIndex);
+            Log.Debug("设置装饰:" + selectPropIndex);
+        }
+        private void InitRoleGroupList()
+        {
+            for (int i = 0; i < selectGroups[0].transform.childCount; i++)
+            {
+                if (GameData.instance.openModels.Contains(i))
+                {
+                    selectGroups[0].transform.GetChild(i).GetChild(2).gameObject.SetActive(false);
+                }
+            }
+            this.OnRoleSelected(0);
+        }
+        //  选择角色
+        public void OnRoleSelected(int roleIndex)
+        {
+            if (!GameData.instance.openModels.Contains(roleIndex))
+            {
+                Debug.Log("没解锁 roleIndex:" + roleIndex);
+                return;
+            }
+            this.selectedRoleIndex = roleIndex;
+            if (!roleToggle[roleIndex].isOn)
+            {
+                roleToggle[roleIndex].isOn = true;
+            }
+            GameData.instance.SetModel(roleIndex);
+
+            Log.Debug("设置模型:" + roleIndex);
+
+            InitDressGroupList();
         }
         protected override void OnOpen(object userData)
         {
@@ -225,12 +342,14 @@ namespace StarForce
             this.playerName.text = playerData.nickName;
             // 默认选择第一个
             this.ChangeGroup(0);
-            // 设置道具栏
+            // 初始化角色栏
+            this.InitRoleGroupList();
+            // 初始化道具栏
             this.InitPropGroupList();
-
         }
         protected override void OnResume()
         {
+
         }
         protected override void OnClose(bool isShutdown, object userData)
         {
@@ -251,4 +370,10 @@ namespace StarForce
             return data;
         }
     }
+
+    [System.Serializable]
+    public class RoleFromEvent : UnityEvent<int>
+    {
+    }
+
 }

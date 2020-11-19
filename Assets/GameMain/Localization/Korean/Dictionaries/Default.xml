@@ -26,6 +26,7 @@
     <String Key="Setting.Language" Value="언어" />
     <String Key="Setting.LanguageTips" Value="사용언어를 바꾼후 리부팅이 필요 합니다" />
     <String Key="Match.Success" Value="매 칭 성공" />
+    <String Key="Match.Matching" Value="매 칭 중" />
     <String Key="Match.Join" Value="가입 하 다" />
     <String Key="RoleForm.Confirm" Value="확인" />
     <String Key="RoleForm.Role" Value="배역" />

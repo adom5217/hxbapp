@@ -26,6 +26,7 @@
     <String Key="Setting.Language" Value="Language" />
     <String Key="Setting.LanguageTips" Value="Language change demands restarting." />
     <String Key="Match.Success" Value="Match successfully" />
+    <String Key="Match.Matching" Value="Matching" />
     <String Key="Match.Join" Value="Join" />
     <String Key="RoleForm.Confirm" Value="OK" />
     <String Key="RoleForm.Role" Value="Role" />
