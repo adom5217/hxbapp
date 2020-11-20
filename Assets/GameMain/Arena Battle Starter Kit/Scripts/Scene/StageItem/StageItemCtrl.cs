@@ -14,11 +14,12 @@ public class StageItemCtrl : MonoBehaviour {
     public UnitItemBaseCtrl[] enemyTeam;
 
     void Start () {
-
-	}
+        gameObject.SetActive(false);
+    }
 
     public void StartInit()
     {
+        gameObject.SetActive(true);
         this.SpawnOurTeam();
         this.SpawnEnemyTeam();
     }

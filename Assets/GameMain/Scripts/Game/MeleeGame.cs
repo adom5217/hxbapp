@@ -45,8 +45,20 @@ namespace StarForce
          public override void Initialize()
          { 
              base.Initialize();
-             GameEntry.UI.OpenUIForm(UIFormId.JoystickForm);
-             SceneController.instance.InitStage();
+
+             GameEntry.UI.OpenUIForm(UIFormId.RoleForm,this);
+            
          }
+
+        public void StartGame()
+        {
+            SceneController.instance.InitStage();
+            GameEntry.UI.OpenUIForm(UIFormId.JoystickForm);
+
+            //是否需要引导
+            GameEntry.UI.OpenUIForm(UIFormId.OprationGuideForm);
+
+        }
+
     }
 }

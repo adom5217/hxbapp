@@ -38,7 +38,9 @@ namespace StarForce
                 GameEntry.UI.OpenUIForm(UIFormId.DialogForm, dialogParams);
                 return;
             }
-            GameEntry.UI.OpenUIForm(UIFormId.RoleForm, m_ProcedureMenu);
+
+            m_ProcedureMenu.StartGame();
+            
         }
 
         bool bMatching = false;

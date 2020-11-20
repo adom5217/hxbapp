@@ -20,7 +20,7 @@ namespace StarForce
     /// </summary>
     public class RoleForm : UGuiForm
     {
-        private ProcedureMenu m_ProcedureMenu = null;
+        private MeleeGame m_MeleeGame = null;
         // 3个面板的游戏物体
         public List<GameObject> selectGroups;
         // 皮肤的content
@@ -63,7 +63,8 @@ namespace StarForce
         // 点击确认按钮
         public void ConfirmButtonClick()
         {
-            m_ProcedureMenu.StartGame();
+            m_MeleeGame.StartGame();
+            
         }
 
         //  点击重置按钮
@@ -356,10 +357,10 @@ namespace StarForce
         protected override void OnOpen(object userData)
         {
             base.OnOpen(userData);
-            m_ProcedureMenu = (ProcedureMenu)userData;
-            if (m_ProcedureMenu == null)
+            m_MeleeGame = (MeleeGame)userData;
+            if (m_MeleeGame == null)
             {
-                Log.Warning("ProcedureMenu is invalid when open MenuForm.");
+                Log.Warning("m_MeleeGame is invalid when open RoleForm.");
                 return;
             }
             // 玩家数据赋值
@@ -380,7 +381,7 @@ namespace StarForce
         protected override void OnClose(bool isShutdown, object userData)
         {
             base.OnClose(isShutdown, userData);
-            m_ProcedureMenu = null;
+            m_MeleeGame = null;
         }
 
         // 分页

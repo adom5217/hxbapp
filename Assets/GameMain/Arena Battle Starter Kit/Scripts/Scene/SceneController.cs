@@ -35,7 +35,7 @@ public class SceneController : MonoBehaviour {
 
     private void Start()
     {
-
+        
     }
 
     public void InitStage()
