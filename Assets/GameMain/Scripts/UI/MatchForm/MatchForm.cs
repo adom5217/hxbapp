@@ -72,12 +72,12 @@ namespace StarForce
             for (int i = 1; i < 6; i++)
             {
                 yield return new WaitForSecondsRealtime(Random.Range(0.0f, 2f));
-                matchFormPlayers[i].SetMatchFormPlayerInfo(playerDatas[i].nickName, sprites[Random.Range(0, 5)]);
+                matchFormPlayers[i].SetMatchFormPlayerInfo(playerDatas[i].nickName, sprites[playerDatas[i].model]);
             }
             title.text = GameEntry.Localization.GetString("Match.Success");
             bMatching = false;
         }
-       
+
         protected override void OnResume()
         {
         }

@@ -35,6 +35,8 @@ namespace StarForce
         public Transform leftButton;
         // 右按钮
         public Transform rightButton;
+        public Transform dressScrollBar;
+        public Transform propScrollBar;
         // 玩家名字
         public Text playerName;
         // 角色皮肤
@@ -57,6 +59,7 @@ namespace StarForce
         // 选择的道具
         private int selectedPropIndex;
 
+        private Coroutine moveCoroutine;
         // 点击确认按钮
         public void ConfirmButtonClick()
         {
@@ -66,41 +69,59 @@ namespace StarForce
         //  点击重置按钮
         public void ResetButtonClick()
         {
-
+            // 默认选择第一个
+            this.ChangeGroup(0);
+            // 初始化角色栏
+            this.InitRoleGroupList();
+            // 初始化道具栏
+            this.InitPropGroupList();
         }
 
         public void OnLeftButtonClick()
         {
+            if (moveCoroutine!=null)
+            {
+                StopCoroutine(moveCoroutine);
+                moveCoroutine = null;
+            }
             if (dressContent.gameObject.activeInHierarchy)
             {
-                Vector3 position = dressContent.localPosition;
-                position.x = position.x + 270 >= 0 ? 0 : position.x + 270;
-                dressContent.localPosition = position;
+                moveCoroutine= StartCoroutine(MoveScrollBar(0, dressScrollBar.GetComponent<Scrollbar>()));
             }
             else if (propContent.gameObject.activeInHierarchy)
             {
-                Vector3 position = propContent.localPosition;
-                position.x = position.x + 270 >= 0 ? 0 : position.x + 270;
-                propContent.localPosition = position;
+                moveCoroutine= StartCoroutine(MoveScrollBar(0, propScrollBar.GetComponent<Scrollbar>()));
             }
         }
         public void OnRightButtonClick()
         {
+            if (moveCoroutine != null)
+            {
+                StopCoroutine(moveCoroutine);
+                moveCoroutine = null;
+            }
             if (dressContent.gameObject.activeInHierarchy)
             {
-                Vector3 position = dressContent.localPosition;
-                position.x = position.x - 270 <= -dressContent.GetComponent<RectTransform>().sizeDelta.x ?
-                    -dressContent.GetComponent<RectTransform>().sizeDelta.x : position.x - 270;
-                dressContent.localPosition = position;
+                moveCoroutine= StartCoroutine(MoveScrollBar(1, dressScrollBar.GetComponent<Scrollbar>()));
             }
             else if (propContent.gameObject.activeInHierarchy)
             {
-                Vector3 position = propContent.localPosition;
-                position.x = position.x - 270 <= -propContent.GetComponent<RectTransform>().sizeDelta.x ?
-                    -propContent.GetComponent<RectTransform>().sizeDelta.x : position.x - 270;
-                propContent.localPosition = position;
+                moveCoroutine= StartCoroutine(MoveScrollBar(1, propScrollBar.GetComponent<Scrollbar>()));
             }
         }
+
+        IEnumerator MoveScrollBar(float targetValue, Scrollbar scrollbar)
+        {
+            float i = 0;
+            while (Mathf.Abs(scrollbar.value - targetValue) >= 0.01)
+            {
+                i += 1f / 30f;
+                scrollbar.value = Mathf.Lerp(scrollbar.value, targetValue, i);
+                yield return new WaitForFixedUpdate();
+            }
+            scrollbar.value = targetValue;
+        }
+
         // 切换选择面板
         public void ChangeGroup(int groupIndex)
         {
@@ -167,7 +188,7 @@ namespace StarForce
             string dressPrefix = "";
             if (selectedRoleIndex == 0)
             {
-                dressPrefix = "H";
+                dressPrefix = "M";
             }
             else if (selectedRoleIndex == 1)
             {
@@ -175,7 +196,7 @@ namespace StarForce
             }
             else if (selectedRoleIndex == 2)
             {
-                dressPrefix = "G";
+                dressPrefix = "X";
             }
             else if (selectedRoleIndex == 3)
             {
@@ -184,6 +205,10 @@ namespace StarForce
             else if (selectedRoleIndex == 4)
             {
                 dressPrefix = "G";
+            }
+            else if (selectedRoleIndex == 5)
+            {
+                dressPrefix = "T";
             }
             else
             {
@@ -311,6 +336,7 @@ namespace StarForce
         //  选择角色
         public void OnRoleSelected(int roleIndex)
         {
+            PlayUISound(10001);
             if (!GameData.instance.openModels.Contains(roleIndex))
             {
                 Debug.Log("没解锁 roleIndex:" + roleIndex);
