@@ -6,6 +6,7 @@
 //------------------------------------------------------------
 
 using GameFramework.Event;
+using System.Threading.Tasks;
 using UnityGameFramework.Runtime;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 
@@ -24,9 +25,10 @@ namespace StarForce
             }
         }
 
-        public void StartGame()
+        public async void StartGame()
         {
             GameEntry.UI.OpenUIForm(UIFormId.LoadingForm,new LoadingParams());
+            await Task.Delay(500);
             m_StartGame = true;
         }
 

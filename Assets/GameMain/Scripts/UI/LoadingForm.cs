@@ -57,7 +57,7 @@ namespace StarForce
             {
                 mCurPro++;
                 m_Progress.value = mCurPro / mMaxPro;
-                await Task.Delay(100);
+                await Task.Delay(200);
             }
             Debug.Log("模拟加载完成");
             Close();

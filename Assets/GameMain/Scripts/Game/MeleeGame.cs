@@ -7,6 +7,7 @@
 
 using GameFramework;
 using GameFramework.DataTable;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace StarForce
@@ -45,11 +46,11 @@ namespace StarForce
          public override void Initialize()
          { 
              base.Initialize();
-
-             GameEntry.UI.OpenUIForm(UIFormId.RoleForm,this);
             
-         }
-
+             GameEntry.UI.OpenUIForm(UIFormId.RoleForm, this);
+             
+        }
+        
         public void StartGame()
         {
             SceneController.instance.InitStage();

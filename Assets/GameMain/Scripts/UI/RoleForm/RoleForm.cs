@@ -269,6 +269,8 @@ namespace StarForce
             GameData.instance.SetSkin(selectDressIndex);
 
             Log.Debug("设置装饰:" + selectDressIndex);
+
+            AnimUICtrl.instance.SetSkin(selectDressIndex);
         }
         private void InitPropGroupList()
         {
@@ -321,7 +323,8 @@ namespace StarForce
 
             Debug.Log("roleIndex:" + selectedRoleIndex + " selectPropIndex:" + selectPropIndex);
             GameData.instance.SetItem(selectPropIndex);
-            Log.Debug("设置装饰:" + selectPropIndex);
+            Log.Debug("设置武器:" + selectPropIndex);
+            AnimUICtrl.instance.SetWeapon(selectPropIndex);
         }
         private void InitRoleGroupList()
         {
@@ -352,6 +355,8 @@ namespace StarForce
 
             Log.Debug("设置模型:" + roleIndex);
 
+            AnimUICtrl.instance.ShowModel(roleIndex);
+            
             InitDressGroupList();
         }
         protected override void OnOpen(object userData)

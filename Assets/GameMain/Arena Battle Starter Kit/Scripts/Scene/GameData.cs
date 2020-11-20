@@ -22,10 +22,19 @@ public class GameData : MonoBehaviour
     void Awake()
     {
         instance = this;
-        //默认开发第一个
-        openModels.Add(0);
-        openItems.Add(0);
-        openSkins.Add(0);
+        //默认开发第一个 TODO 全部开发测试
+        for (int i = 0; i < 15; i++)
+        {
+            if(i<MaxModel)
+                openModels.Add(i);
+            if(i<MaxSkin)
+                openSkins.Add(i);
+            if (i < MaxItem)
+                openItems.Add(i);
+        }
+        
+        
+        
     }
     //本地保存读取
     public void Read()
