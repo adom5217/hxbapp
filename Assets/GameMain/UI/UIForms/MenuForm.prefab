@@ -1355,6 +1355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0fea4037c7349d49af8583511aaeb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundToggle: {fileID: 7032682900470523980}
+  musicToggle: {fileID: 39950127540478422}
   m_QuitButton: {fileID: 385430177963695188}
 --- !u!1 &385430177963695188
 GameObject:

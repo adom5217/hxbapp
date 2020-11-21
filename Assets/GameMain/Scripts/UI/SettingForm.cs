@@ -55,7 +55,8 @@ namespace StarForce
         public void OnMusicMuteChanged(bool isOn)
         {
             GameEntry.Sound.Mute("Music", !isOn);
-            m_MusicVolumeSlider.gameObject.SetActive(isOn);
+            GameEntry.Sound.SetVolume("Music", !isOn ? 0 : 50);
+            //m_MusicVolumeSlider.gameObject.SetActive(isOn);
         }
 
         public void OnMusicVolumeChanged(float volume)
@@ -66,7 +67,8 @@ namespace StarForce
         public void OnSoundMuteChanged(bool isOn)
         {
             GameEntry.Sound.Mute("Sound", !isOn);
-            m_SoundVolumeSlider.gameObject.SetActive(isOn);
+            GameEntry.Sound.SetVolume("Sound", !isOn ? 0 : 100);
+            //m_SoundVolumeSlider.gameObject.SetActive(isOn);
         }
 
         public void OnSoundVolumeChanged(float volume)
@@ -77,7 +79,8 @@ namespace StarForce
         public void OnUISoundMuteChanged(bool isOn)
         {
             GameEntry.Sound.Mute("UISound", !isOn);
-            m_UISoundVolumeSlider.gameObject.SetActive(isOn);
+            GameEntry.Sound.SetVolume("UISound", !isOn ? 0 : 100);
+            //m_UISoundVolumeSlider.gameObject.SetActive(isOn);
         }
 
         public void OnUISoundVolumeChanged(float volume)
@@ -152,17 +155,16 @@ namespace StarForce
         {
             base.OnOpen(userData);
 
-            soundToggle.isOn = GameEntry.Sound.IsMuted("Sound");
-            musicToggle.isOn = GameEntry.Sound.IsMuted("Music");
+            musicToggle.isOn = !GameEntry.Sound.IsMuted("Music");
+            soundToggle.isOn = !GameEntry.Sound.IsMuted("Sound");
+            //m_MusicMuteToggle.isOn = !GameEntry.Sound.IsMuted("Music");
+            //m_MusicVolumeSlider.value = GameEntry.Sound.GetVolume("Music");
 
-            m_MusicMuteToggle.isOn = !GameEntry.Sound.IsMuted("Music");
-            m_MusicVolumeSlider.value = GameEntry.Sound.GetVolume("Music");
+            //m_SoundMuteToggle.isOn = !GameEntry.Sound.IsMuted("Sound");
+            //m_SoundVolumeSlider.value = GameEntry.Sound.GetVolume("Sound");
 
-            m_SoundMuteToggle.isOn = !GameEntry.Sound.IsMuted("Sound");
-            m_SoundVolumeSlider.value = GameEntry.Sound.GetVolume("Sound");
-
-            m_UISoundMuteToggle.isOn = !GameEntry.Sound.IsMuted("UISound");
-            m_UISoundVolumeSlider.value = GameEntry.Sound.GetVolume("UISound");
+            //m_UISoundMuteToggle.isOn = !GameEntry.Sound.IsMuted("UISound");
+            //m_UISoundVolumeSlider.value = GameEntry.Sound.GetVolume("UISound");
 
             m_SelectedLanguage = GameEntry.Localization.Language;
             switch (m_SelectedLanguage)
