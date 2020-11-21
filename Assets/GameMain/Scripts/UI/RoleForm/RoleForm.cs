@@ -352,12 +352,13 @@ namespace StarForce
                 roleToggle[roleIndex].isOn = true;
             }
             GameData.instance.SetModel(roleIndex);
-
             Log.Debug("设置模型:" + roleIndex);
-
             AnimUICtrl.instance.ShowModel(roleIndex);
             
             InitDressGroupList();
+
+            GameData.instance.SetItem(this.selectedPropIndex);
+            AnimUICtrl.instance.SetWeapon(this.selectedPropIndex);
         }
         protected override void OnOpen(object userData)
         {

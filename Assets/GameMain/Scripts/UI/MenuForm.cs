@@ -30,7 +30,15 @@ namespace StarForce
             
 
         }
-
+        public void OnMusicMuteChanged(bool isOn)
+        {
+            GameEntry.Sound.Mute("Music", isOn);
+        }
+        public void OnSoundMuteChanged(bool isOn)
+        {
+            GameEntry.Sound.Mute("Sound", isOn);
+            GameEntry.Sound.Mute("UISound", isOn);
+        }
         public void OnSettingButtonClick()
         {
             GameEntry.UI.OpenUIForm(UIFormId.SettingForm);

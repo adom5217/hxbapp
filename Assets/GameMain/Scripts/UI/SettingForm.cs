@@ -152,6 +152,9 @@ namespace StarForce
         {
             base.OnOpen(userData);
 
+            soundToggle.isOn = GameEntry.Sound.IsMuted("Sound");
+            musicToggle.isOn = GameEntry.Sound.IsMuted("Music");
+
             m_MusicMuteToggle.isOn = !GameEntry.Sound.IsMuted("Music");
             m_MusicVolumeSlider.value = GameEntry.Sound.GetVolume("Music");
 

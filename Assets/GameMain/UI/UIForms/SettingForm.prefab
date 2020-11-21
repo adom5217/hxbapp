@@ -643,8 +643,8 @@ MonoBehaviour:
   m_ChineseSimplifiedToggle: {fileID: 11434424}
   m_ChineseTraditionalToggle: {fileID: 11448172}
   m_KoreanToggle: {fileID: 11497670}
-  soundToggle: {fileID: 0}
-  musicToggle: {fileID: 0}
+  soundToggle: {fileID: 7285655332449252931}
+  musicToggle: {fileID: 8221746926207251919}
 --- !u!1 &110356
 GameObject:
   m_ObjectHideFlags: 0
@@ -6526,6 +6526,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 11472764}
         m_MethodName: OnSoundMuteChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11472764}
+        m_MethodName: OnUISoundMuteChanged
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
