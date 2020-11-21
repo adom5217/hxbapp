@@ -32,10 +32,10 @@ namespace StarForce
             if (bMatching)
             {
                 Log.Debug("匹配中...");
-                DialogParams dialogParams = new DialogParams();
-                dialogParams.Mode = 1;
-                dialogParams.Message = GameEntry.Localization.GetString("Match.Matching");
-                GameEntry.UI.OpenUIForm(UIFormId.DialogForm, dialogParams);
+                //DialogParams dialogParams = new DialogParams();
+                //dialogParams.Mode = 1;
+                //dialogParams.Message = GameEntry.Localization.GetString("Match.Matching");
+                //GameEntry.UI.OpenUIForm(UIFormId.DialogForm, dialogParams);
                 return;
             }
 
