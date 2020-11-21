@@ -165,7 +165,25 @@ public class UnitItemBaseCtrl : MonoBehaviour
 
         //Debug.Log(state);
     }
+    private PlayerData mPlayer;
+    public void SetData(PlayerData info)
+    {
+        mPlayer = info;
+        Debug.Log(info);
+        //设置皮肤
+        var mat = Model.GetComponent<SwapMaterials>();
+        mat.Swap(info.skinId);
 
+        //设置武器
+        var wp = Model.GetComponent<SwapWeapon>();
+        wp.Swap(info.itemId);
+
+        //随机装饰
+        var du = Model.GetComponent<DressUp>();
+        du.Swap();
+
+        //playerName = info.nickName;
+    }
     public void SetPosition(float posX, float posZ)
     {
         this.transform.position = new Vector3(posX, 0, posZ);

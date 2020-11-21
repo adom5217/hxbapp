@@ -45,7 +45,8 @@ public class GameData : MonoBehaviour
     {
         
     }
-    private PlayerData GetPlayer(int i)
+    
+    private PlayerData NewPlayer(int i)
     {
         var pp = new PlayerData();
         pp.uid = uuid++;
@@ -68,14 +69,17 @@ public class GameData : MonoBehaviour
     {
         return mPlayers[0];
     }
-
+    public PlayerData GetPlayer(int i)
+    {
+        return mPlayers[i];
+    }
     //第一个玩家自己
     public List<PlayerData> CreatPlayers()
     {
         mPlayers.Clear();
         for(int i = 0;i<MaxPlayer;i++)
         {
-            mPlayers.Add(GetPlayer(i));
+            mPlayers.Add(NewPlayer(i));
         }
         return mPlayers;
     }
@@ -100,7 +104,7 @@ public class GameData : MonoBehaviour
     //设置模型
     public void SetModel(int id, int index = 0)
     {
-        mPlayers[index].dressId = id;
+        mPlayers[index].model = id;
 
     }
 }

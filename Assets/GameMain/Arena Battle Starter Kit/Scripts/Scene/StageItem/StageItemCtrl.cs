@@ -16,7 +16,7 @@ public class StageItemCtrl : MonoBehaviour {
     void Start () {
         gameObject.SetActive(false);
     }
-
+    //GetPlayer 012 自己方 345 敌方
     public void StartInit()
     {
         gameObject.SetActive(true);
@@ -27,14 +27,14 @@ public class StageItemCtrl : MonoBehaviour {
     public void SpawnOurTeam()
     {
         this.ourTeam = new UnitItemBaseCtrl[3];
-        int randomIndex = Random.Range(0, OurTeamPositions.Length);
-
+        
         for (int i = 0; i < OurTeamPositions.Length; i++)
         {
-            UnitItemBaseCtrl unit = SceneController.instance.AddUnitItem(i, -1, this.OurTeamPositions[i].transform.position.x, this.OurTeamPositions[i].transform.position.z, true);
-            if (i == randomIndex)
+            var dd = GameData.instance.GetPlayer(i);
+            UnitItemBaseCtrl unit = SceneController.instance.AddUnitItem(dd.model, -1, this.OurTeamPositions[i].transform.position.x, this.OurTeamPositions[i].transform.position.z, true);
+            if (i == 0) //自己
                 SceneController.instance.SetPlayerUnit(unit);
-
+            unit.SetData(dd);
             this.ourTeam[i] = unit;
         }
     }
@@ -45,7 +45,10 @@ public class StageItemCtrl : MonoBehaviour {
 
         for (int i = 0; i < EnemyTeamPositions.Length; i++)
         {
-            UnitItemBaseCtrl unit = SceneController.instance.AddUnitItem(i, -1, this.EnemyTeamPositions[i].transform.position.x, this.EnemyTeamPositions[i].transform.position.z, false);
+            var dd = GameData.instance.GetPlayer(i+3);
+            UnitItemBaseCtrl unit = SceneController.instance.AddUnitItem(dd.model, -1, this.EnemyTeamPositions[i].transform.position.x, this.EnemyTeamPositions[i].transform.position.z, false);
+
+            unit.SetData(dd);
             this.enemyTeam[i] = unit;
         }
     }
