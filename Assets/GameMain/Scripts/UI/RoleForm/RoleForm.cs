@@ -64,12 +64,15 @@ namespace StarForce
         public void ConfirmButtonClick()
         {
             m_MeleeGame.StartGame();
-            
+
         }
 
         //  点击重置按钮
         public void ResetButtonClick()
         {
+            this.selectedRoleIndex = 0;
+            this.selectedDressIndex = 0;
+            this.selectedPropIndex = 0;
             // 默认选择第一个
             this.ChangeGroup(0);
             // 初始化角色栏
@@ -80,18 +83,18 @@ namespace StarForce
 
         public void OnLeftButtonClick()
         {
-            if (moveCoroutine!=null)
+            if (moveCoroutine != null)
             {
                 StopCoroutine(moveCoroutine);
                 moveCoroutine = null;
             }
             if (dressContent.gameObject.activeInHierarchy)
             {
-                moveCoroutine= StartCoroutine(MoveScrollBar(0, dressScrollBar.GetComponent<Scrollbar>()));
+                moveCoroutine = StartCoroutine(MoveScrollBar(0, dressScrollBar.GetComponent<Scrollbar>()));
             }
             else if (propContent.gameObject.activeInHierarchy)
             {
-                moveCoroutine= StartCoroutine(MoveScrollBar(0, propScrollBar.GetComponent<Scrollbar>()));
+                moveCoroutine = StartCoroutine(MoveScrollBar(0, propScrollBar.GetComponent<Scrollbar>()));
             }
         }
         public void OnRightButtonClick()
@@ -103,11 +106,11 @@ namespace StarForce
             }
             if (dressContent.gameObject.activeInHierarchy)
             {
-                moveCoroutine= StartCoroutine(MoveScrollBar(1, dressScrollBar.GetComponent<Scrollbar>()));
+                moveCoroutine = StartCoroutine(MoveScrollBar(1, dressScrollBar.GetComponent<Scrollbar>()));
             }
             else if (propContent.gameObject.activeInHierarchy)
             {
-                moveCoroutine= StartCoroutine(MoveScrollBar(1, propScrollBar.GetComponent<Scrollbar>()));
+                moveCoroutine = StartCoroutine(MoveScrollBar(1, propScrollBar.GetComponent<Scrollbar>()));
             }
         }
 
@@ -216,7 +219,7 @@ namespace StarForce
                 throw new UnityException("不支持的角色ID");
             }
             List<Sprite> dressSpriteList = dressSprites.FindAll(e => e.name.StartsWith(dressPrefix));
-            Toggle firstToggle = null;
+            Toggle selectedToggle = null;
             foreach (Sprite dressItem in dressSpriteList)
             {
                 if (dressSpriteList.IndexOf(dressItem) >= GameData.MaxSkin)
@@ -239,9 +242,16 @@ namespace StarForce
                 image.GetComponent<Image>().sprite = dressItem;//设置图片
                 toggle.GetComponent<Toggle>().group = selectGroups[1].transform.GetComponent<ToggleGroup>();//设置组
                 toggle.GetComponent<Toggle>().isOn = false;
-                if (dressSpriteList.IndexOf(dressItem) == 0)// 默认选择第一个皮肤
+                toggle.GetComponent<Toggle>().onValueChanged.AddListener((bool isOn) =>
                 {
-                    firstToggle = toggle.GetComponent<Toggle>();
+                    if (isOn)
+                    {
+                        commonButton.m_OnClick.Invoke();
+                    }
+                });
+                if (dressSpriteList.IndexOf(dressItem) == this.selectedDressIndex)// 默认选择皮肤
+                {
+                    selectedToggle = toggle.GetComponent<Toggle>();
                 }
                 // 判断是否解锁
                 if (GameData.instance.openSkins.Contains(dressSpriteList.IndexOf(dressItem)))
@@ -250,7 +260,7 @@ namespace StarForce
                 }
 
             }
-            OnDressToggleOn(0, firstToggle);//设置勾选第一个
+            OnDressToggleOn(this.selectedDressIndex, selectedToggle);// 设置勾选装扮
         }
         // 选择皮肤
         private void OnDressToggleOn(int selectDressIndex, Toggle toggle)
@@ -262,20 +272,18 @@ namespace StarForce
                 return;
             }
             this.selectedDressIndex = selectDressIndex;
-            toggle.isOn = true;
-
-            Debug.Log("roleIndex:" + selectedRoleIndex + " selectDressIndex:" + selectDressIndex);
-
-            GameData.instance.SetSkin(selectDressIndex);
-
+            if (!toggle.isOn)
+            {
+                toggle.isOn = true;
+            }
             Log.Debug("设置装饰:" + selectDressIndex);
-
+            GameData.instance.SetSkin(selectDressIndex);
             AnimUICtrl.instance.SetSkin(selectDressIndex);
         }
         private void InitPropGroupList()
         {
             ClearGroupContent(2);
-            Toggle firstToggle = null;
+            Toggle selectedToggle = null;
             foreach (Sprite propSprite in propSprites)
             {
                 if (propSprites.IndexOf(propSprite) >= GameData.MaxItem)
@@ -297,9 +305,16 @@ namespace StarForce
                 image.GetComponent<Image>().sprite = propSprite;//设置图片
                 toggle.GetComponent<Toggle>().group = selectGroups[2].transform.GetComponent<ToggleGroup>();
                 toggle.GetComponent<Toggle>().isOn = false;
-                if (propSprites.IndexOf(propSprite) == 0)
+                toggle.GetComponent<Toggle>().onValueChanged.AddListener((bool isOn) =>
                 {
-                    firstToggle = toggle.GetComponent<Toggle>();
+                    if (isOn)
+                    {
+                        commonButton.m_OnClick.Invoke();
+                    }
+                });
+                if (propSprites.IndexOf(propSprite) == this.selectedPropIndex)
+                {
+                    selectedToggle = toggle.GetComponent<Toggle>();
                 }
                 // 判断是否解锁
                 if (GameData.instance.openItems.Contains(propSprites.IndexOf(propSprite)))
@@ -307,7 +322,7 @@ namespace StarForce
                     lockImg.gameObject.SetActive(false);
                 }
             }
-            OnPropToggleOn(0, firstToggle);//设置勾选第一个
+            OnPropToggleOn(this.selectedPropIndex, selectedToggle);//设置勾选
         }
         // 选择道具
         private void OnPropToggleOn(int selectPropIndex, Toggle toggle)
@@ -319,11 +334,12 @@ namespace StarForce
                 return;
             }
             this.selectedPropIndex = selectPropIndex;
-            toggle.isOn = true;
-
-            Debug.Log("roleIndex:" + selectedRoleIndex + " selectPropIndex:" + selectPropIndex);
-            GameData.instance.SetItem(selectPropIndex);
+            if (!toggle.isOn)
+            {
+                toggle.isOn = true;
+            }
             Log.Debug("设置武器:" + selectPropIndex);
+            GameData.instance.SetItem(selectPropIndex);
             AnimUICtrl.instance.SetWeapon(selectPropIndex);
         }
         private void InitRoleGroupList()
@@ -351,14 +367,29 @@ namespace StarForce
             {
                 roleToggle[roleIndex].isOn = true;
             }
-            GameData.instance.SetModel(roleIndex);
             Log.Debug("设置模型:" + roleIndex);
+            GameData.instance.SetModel(roleIndex);
             AnimUICtrl.instance.ShowModel(roleIndex);
-            
+
             InitDressGroupList();
 
+            Log.Debug("设置道具:" + roleIndex);
             GameData.instance.SetItem(this.selectedPropIndex);
             AnimUICtrl.instance.SetWeapon(this.selectedPropIndex);
+        }
+
+        public void OnRoleToggleChanged(bool isOn)
+        {
+            if (isOn)
+            {
+                for (int i = 0; i < roleToggle.Count; i++)
+                {
+                    if (roleToggle[i].isOn)
+                    {
+                        this.OnRoleSelected(i);
+                    }
+                }
+            }
         }
         protected override void OnOpen(object userData)
         {
