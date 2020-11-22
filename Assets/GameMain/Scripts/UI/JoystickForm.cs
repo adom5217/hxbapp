@@ -154,10 +154,14 @@ namespace StarForce
         public void OnSkillUp()
         {
             Log.Debug("释放下技能上1 加速");
+            if (SceneController.instance.player != null)
+                SceneController.instance.player.NearAttack();
         }
         public void OnSkillDown()
         {
             Log.Debug("释放下技能下2 飞镖");
+            if (SceneController.instance.player != null)
+                SceneController.instance.player.FarAttack();
         }
         protected override void OnClose(bool isShutdown, object userData)
         {

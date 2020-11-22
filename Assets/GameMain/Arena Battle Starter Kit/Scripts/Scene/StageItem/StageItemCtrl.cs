@@ -33,7 +33,10 @@ public class StageItemCtrl : MonoBehaviour {
             var dd = GameData.instance.GetPlayer(i);
             UnitItemBaseCtrl unit = SceneController.instance.AddUnitItem(dd.model, dd.uid, this.OurTeamPositions[i].transform.position.x, this.OurTeamPositions[i].transform.position.z, true);
             if (i == 0) //自己
+            {
+                unit.isPlayerSelf = true;
                 SceneController.instance.SetPlayerUnit(unit);
+            }
             unit.SetData(dd);
             this.ourTeam[i] = unit;
         }
@@ -66,10 +69,24 @@ public class StageItemCtrl : MonoBehaviour {
         }
     }
 
-    //重来一把
+    //重新开始
     public void ResetGame()
     {
+        foreach (var u in this.enemyTeam)
+        {
+            u.aiHelper.enabled = true;
+            u.Respawn();
+            u.ResetData();
+        }
+        foreach (var u in this.ourTeam)
+        {
+            if(!u.isPlayerSelf)
+                u.aiHelper.enabled = true;
+            u.Respawn();
+            u.ResetData();
+        }
         
+
     }
 
     public void GameOver()

@@ -25,7 +25,7 @@ public class UnitItemBaseCtrl : MonoBehaviour
     public int instanceId;
     public bool isOurTeam;
     public bool isKilled;
-
+    public bool isPlayerSelf =false;
     public string playerName;
     public float speed = 2f;
     public float attackRange = 4f;
@@ -199,6 +199,12 @@ public class UnitItemBaseCtrl : MonoBehaviour
 
         //playerName = info.nickName;
     }
+    public void ResetData()
+    {
+        mPlayer.deadNum = 0;
+        mPlayer.killNum = 0;
+        mPlayer.skillId = 0;
+    }
     public void SetPosition(float posX, float posZ)
     {
         this.transform.position = new Vector3(posX, 0, posZ);
@@ -292,6 +298,17 @@ public class UnitItemBaseCtrl : MonoBehaviour
             this._lastShootedTime = Time.time;
             this.StartCoroutine(_StopAttack());
         }
+    }
+    //近战攻击
+    public void NearAttack()
+    {
+    
+    }
+
+    //远程攻击
+    public void FarAttack()
+    {
+
     }
 
     public UnitItemBaseCtrl GetNearestEnemy()

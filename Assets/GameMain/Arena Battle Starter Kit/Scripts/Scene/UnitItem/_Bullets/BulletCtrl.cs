@@ -41,8 +41,8 @@ public class BulletCtrl : MonoBehaviour {
             if (unit.OnReceiveHit(this._hitPoints))
             {//打死了
                 _attacker.Kill(unit);
-                var mydead = unit.instanceId == GameData.instance.GetPlayerSelf().uid;
-                GameEntry.Event.Fire(OnKillOneEventArgs.EventId,OnKillOneEventArgs.Create(_attacker.playerName,unit.playerName, _attacker.KillNum, mydead));
+                
+                GameEntry.Event.Fire(OnKillOneEventArgs.EventId,OnKillOneEventArgs.Create(_attacker.playerName,unit.playerName, _attacker.KillNum, unit.isPlayerSelf));
             }
             Destroy(this.gameObject);
         }
