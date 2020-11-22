@@ -135,6 +135,7 @@
     <Compile Include="Assets\GameMain\Scripts\Entity\EntityLogic\TargetableObject.cs" />
     <Compile Include="Assets\GameMain\Scripts\Entity\EntityLogic\Thruster.cs" />
     <Compile Include="Assets\GameMain\Scripts\Entity\EntityLogic\Weapon.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Events\EventDefine.cs" />
     <Compile Include="Assets\GameMain\Scripts\Game\GameBase.cs" />
     <Compile Include="Assets\GameMain\Scripts\Game\GameMode.cs" />
     <Compile Include="Assets\GameMain\Scripts\Game\MeleeGame.cs" />
@@ -190,6 +191,7 @@
     <Compile Include="Assets\GameMain\Scripts\UI\UpdateResourceForm.cs" />
     <Compile Include="Assets\GameMain\Scripts\Utility\AIUtility.cs" />
     <Compile Include="Assets\GameMain\Scripts\Utility\AssetUtility.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Utility\GameObjectHelper.cs" />
     <Compile Include="Assets\GameMain\Scripts\Utility\LitJsonHelper.cs" />
     <Compile Include="Assets\GameMain\Scripts\Utility\WebUtility.cs" />
     <Compile Include="Assets\GameMain\Suriyun\Scripts\AnimatorController.cs" />

@@ -31,7 +31,7 @@ public class StageItemCtrl : MonoBehaviour {
         for (int i = 0; i < OurTeamPositions.Length; i++)
         {
             var dd = GameData.instance.GetPlayer(i);
-            UnitItemBaseCtrl unit = SceneController.instance.AddUnitItem(dd.model, -1, this.OurTeamPositions[i].transform.position.x, this.OurTeamPositions[i].transform.position.z, true);
+            UnitItemBaseCtrl unit = SceneController.instance.AddUnitItem(dd.model, dd.uid, this.OurTeamPositions[i].transform.position.x, this.OurTeamPositions[i].transform.position.z, true);
             if (i == 0) //自己
                 SceneController.instance.SetPlayerUnit(unit);
             unit.SetData(dd);
@@ -46,11 +46,34 @@ public class StageItemCtrl : MonoBehaviour {
         for (int i = 0; i < EnemyTeamPositions.Length; i++)
         {
             var dd = GameData.instance.GetPlayer(i+3);
-            UnitItemBaseCtrl unit = SceneController.instance.AddUnitItem(dd.model, -1, this.EnemyTeamPositions[i].transform.position.x, this.EnemyTeamPositions[i].transform.position.z, false);
+            UnitItemBaseCtrl unit = SceneController.instance.AddUnitItem(dd.model, dd.uid, this.EnemyTeamPositions[i].transform.position.x, this.EnemyTeamPositions[i].transform.position.z, false);
 
             unit.SetData(dd);
             this.enemyTeam[i] = unit;
         }
     }
 
+    private void StopAI()
+    {
+        foreach (var u in this.enemyTeam)
+        {
+            u.aiHelper.enabled = false;
+        }
+
+        foreach (var u in this.ourTeam)
+        {
+            u.aiHelper.enabled = false;
+        }
+    }
+
+    //重来一把
+    public void ResetGame()
+    {
+        
+    }
+
+    public void GameOver()
+    {
+        StopAI();
+    }
 }

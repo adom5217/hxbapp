@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class UnitItemBaseCtrl : MonoBehaviour
@@ -75,10 +76,12 @@ public class UnitItemBaseCtrl : MonoBehaviour
 
     public void Respawn()
     {
+        this.transform.position = this.isOurTeam ? SceneController.instance.Stage.OurTeamPositions[1].transform.position : SceneController.instance.Stage.EnemyTeamPositions[1].transform.position;
+        
         this.isKilled = false;
         this.currentHealth = healthPoints;
         this._itemUI.SetEnergyBarProgress(1.0f);
-        this.transform.position = this.isOurTeam ? SceneController.instance.Stage.OurTeamPositions[1].transform.position : SceneController.instance.Stage.EnemyTeamPositions[1].transform.position;
+        
     }
 
     private int _grassEnterCounter;
@@ -131,12 +134,24 @@ public class UnitItemBaseCtrl : MonoBehaviour
             this.SetState(Common.State.RUN);
         }
     }
-
-    public void Kill()
+    public void Kill(UnitItemBaseCtrl unit)
+    {
+        mPlayer.killNum++;
+        Debug.Log(playerName+" 击杀了 "+ unit .playerName +":"+ mPlayer.killNum);
+    }
+    //杀人数
+    public int KillNum
+    {
+        get {
+            return mPlayer.killNum;
+        }
+    }
+    public void BeKill()
     {
         this.isKilled = true;
         this.PlayKillParticle();
         this.Respawn();
+        mPlayer.deadNum++;
     }
 
     public void SetState(Common.State state)
@@ -324,7 +339,7 @@ public class UnitItemBaseCtrl : MonoBehaviour
 
         GameObject bullet = Utils.CreateInstance(this.Bullet, SceneController.instance.gameObject, true);
         bullet.transform.position = this.transform.position + new Vector3(0, 0.5f, 0);
-        bullet.GetComponent<BulletCtrl>().SetData(_aimDirectionVector.normalized, 30f, distanceToObstacle, this.hitPoints, this.isOurTeam);
+        bullet.GetComponent<BulletCtrl>().SetData(_aimDirectionVector.normalized, 30f, distanceToObstacle, this.hitPoints,this);
 
         GameObject particle = SceneController.instance.PlayParticle(this.AttackParticle, this.transform.position + new Vector3(0, 0.5f, 0), 3);
         particle.transform.rotation = Quaternion.LookRotation(_aimDirectionVector);
@@ -337,13 +352,17 @@ public class UnitItemBaseCtrl : MonoBehaviour
         GameObject particle = SceneController.instance.PlayParticle(this.KillParticle, this.transform.position + new Vector3(0, 0.1f, 0), 3);
     }
 
-    public void OnReceiveHit(float hitPoints)
+    public bool OnReceiveHit(float hitPoints)
     {
         this.currentHealth -= hitPoints;
         if (this.currentHealth <= 0)
-            this.Kill();
+        {
+            this.BeKill();
+            return true;
+        }
 
         this._itemUI.SetEnergyBarProgress(this.currentHealth / this.healthPoints);
+        return false;
     }
 
     void OnCollisionExit(Collision collision)

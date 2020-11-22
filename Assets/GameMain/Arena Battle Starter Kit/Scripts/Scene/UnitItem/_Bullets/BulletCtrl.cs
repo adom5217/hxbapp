@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿using StarForce;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletCtrl : MonoBehaviour {
 
-    private bool _isOurTeam;
+    private UnitItemBaseCtrl _attacker;
     private float _hitPoints;
     private float _velocity;
     private Vector3 _moveDirection;
@@ -12,13 +13,13 @@ public class BulletCtrl : MonoBehaviour {
 
     private bool _isStarted;
 
-    public void SetData(Vector3 moveDirection, float velocity, float maxDistance, float hitPoints, bool isOurTeam)
+    public void SetData(Vector3 moveDirection, float velocity, float maxDistance, float hitPoints,UnitItemBaseCtrl attacker)
     {
         this._moveDirection = moveDirection;
         this._velocity = velocity;
         this._maxDistance = maxDistance;
         this._hitPoints = hitPoints;
-        this._isOurTeam = isOurTeam;
+        this._attacker = attacker;
 
         this._isStarted = true; 
         Destroy(this.gameObject, maxDistance / velocity);
@@ -35,9 +36,14 @@ public class BulletCtrl : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         UnitItemBaseCtrl unit = other.GetComponent<UnitItemBaseCtrl>();
-        if(unit != null && unit.isOurTeam != _isOurTeam)
+        if(unit != null && unit.isOurTeam != _attacker.isOurTeam)
         {
-            unit.OnReceiveHit(this._hitPoints);
+            if (unit.OnReceiveHit(this._hitPoints))
+            {//打死了
+                _attacker.Kill(unit);
+                var mydead = unit.instanceId == GameData.instance.GetPlayerSelf().uid;
+                GameEntry.Event.Fire(OnKillOneEventArgs.EventId,OnKillOneEventArgs.Create(_attacker.playerName,unit.playerName, _attacker.KillNum, mydead));
+            }
             Destroy(this.gameObject);
         }
     }

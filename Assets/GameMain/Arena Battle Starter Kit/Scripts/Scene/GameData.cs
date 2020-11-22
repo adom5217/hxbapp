@@ -119,4 +119,7 @@ public class PlayerData
     public int dressId = 0; //装扮id  样式
     public int skinId = 0;//皮肤id  动物形象
     public int skillId = 0; // 技能 0 无
+    public int killNum = 0; //击杀人数
+    public int deadNum = 0; //死亡数量
+    
 }
