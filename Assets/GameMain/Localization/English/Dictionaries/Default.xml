@@ -34,6 +34,12 @@
     <String Key="RoleForm.Prop" Value="Porp" />
     <String Key="RankForm.GameRank" Value="Ranking" />
     <String Key="RankForm.Continue" Value="Continue" />
+
+    <String Key="SettingForm.Title" Value="Option settings" />
+    <String Key="SettingForm.Volume" Value="Sound Volume:" />
+    <String Key="SettingForm.Music" Value="Background Music:" />
+    <String Key="SettingForm.Continue" Value="Continue" />
+    
     <String Key="OperationGuideForm.Continue" Value="Continue" />
     <String Key="OperationGuideForm.FarAttack" Value="Far Attack" />
     <String Key="OperationGuideForm.Sprint" Value="Sprint" />

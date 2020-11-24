@@ -34,6 +34,12 @@
     <String Key="RoleForm.Prop" Value="도구" />
     <String Key="RankForm.GameRank" Value="순위표" />
     <String Key="RankForm.Continue" Value="계속 하 다" />
+    
+    <String Key="SettingForm.Title" Value="옵션 설정" />
+    <String Key="SettingForm.Volume" Value="음향효과 음량:" />
+    <String Key="SettingForm.Music" Value="배경 음악:" />
+    <String Key="SettingForm.Continue" Value="계속 하 다" />
+    
     <String Key="OperationGuideForm.Continue" Value="계속 하 다" />
     <String Key="OperationGuideForm.Continue" Value="계속 하 다" />
     <String Key="OperationGuideForm.FarAttack" Value="远攻" />
