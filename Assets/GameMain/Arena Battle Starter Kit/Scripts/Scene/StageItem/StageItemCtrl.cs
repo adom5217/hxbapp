@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class StageItemCtrl : MonoBehaviour {
@@ -13,6 +14,8 @@ public class StageItemCtrl : MonoBehaviour {
     public UnitItemBaseCtrl[] ourTeam;
     public UnitItemBaseCtrl[] enemyTeam;
 
+    public GameObject SkillBook;
+
     void Start () {
         gameObject.SetActive(false);
     }
@@ -22,6 +25,7 @@ public class StageItemCtrl : MonoBehaviour {
         gameObject.SetActive(true);
         this.SpawnOurTeam();
         this.SpawnEnemyTeam();
+        SpawnSkill();
     }
 
     public void SpawnOurTeam()
@@ -55,7 +59,15 @@ public class StageItemCtrl : MonoBehaviour {
             this.enemyTeam[i] = unit;
         }
     }
-
+    //开始后随机3-5秒出现一个 技能
+    public async void SpawnSkill()
+    {
+        int num = Random.Range(0, 2);
+        await Task.Delay(3000+ num*1000);
+        var obj = Utils.CreateInstance(SkillBook, gameObject, true);
+        int i = Random.Range(0, GrassPositions.Length);
+        obj.transform.position = GrassPositions[i].transform.position + new Vector3(0, 1f, 0);
+    }
     private void StopAI()
     {
         foreach (var u in this.enemyTeam)
@@ -85,7 +97,8 @@ public class StageItemCtrl : MonoBehaviour {
             u.Respawn();
             u.ResetData();
         }
-        
+        //重新生成技能
+        SpawnSkill();
 
     }
 

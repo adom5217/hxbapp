@@ -14,7 +14,7 @@ public class SceneController : MonoBehaviour {
     public GameObject PlayerSpawnPosition;
     public StageItemCtrl Stage;
     public GameObject ParticlesContainer;
-
+    
     /* public vars */
     [HideInInspector]
     public UnitItemBaseCtrl player;

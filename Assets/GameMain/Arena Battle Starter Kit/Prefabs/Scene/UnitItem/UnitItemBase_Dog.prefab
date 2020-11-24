@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d148822da1c34c619f086bffbf8189a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 1364659626159490, guid: 595acd98dabac4b9c824656f86aec724, type: 3}
+  Bullet: {fileID: 2102106576152696155, guid: 75ab42969a2d6e640862d02912954d1b, type: 3}
   AttackParticle: {fileID: 1323408214431884, guid: 4cf198dbd48ae43aa90c7e17459e4f60,
     type: 3}
   KillParticle: {fileID: 1667554098873812, guid: d0909ae0ed6d045208fa8c26a58d4c76,
@@ -141,6 +141,7 @@ MonoBehaviour:
   instanceId: 0
   isOurTeam: 0
   isKilled: 0
+  isPlayerSelf: 0
   playerName: Dog
   speed: 2.5
   attackRange: 6
@@ -420,6 +421,10 @@ PrefabInstance:
     - target: {fileID: 1161433349948490, guid: e9b58d70711b6d54ab4060de196caaa5, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1161433349948490, guid: e9b58d70711b6d54ab4060de196caaa5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1165375295188766, guid: e9b58d70711b6d54ab4060de196caaa5, type: 3}
       propertyPath: m_Layer
@@ -761,6 +766,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 1698414775209842, guid: e9b58d70711b6d54ab4060de196caaa5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1704076846403634, guid: e9b58d70711b6d54ab4060de196caaa5, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -1001,6 +1010,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 137143283745952038, guid: e9b58d70711b6d54ab4060de196caaa5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e9dfd66b287dcc747972f947d529da3a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9b58d70711b6d54ab4060de196caaa5, type: 3}
 --- !u!1 &1583472755887071685 stripped

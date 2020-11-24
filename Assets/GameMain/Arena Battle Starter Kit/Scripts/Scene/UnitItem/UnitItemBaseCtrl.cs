@@ -199,6 +199,11 @@ public class UnitItemBaseCtrl : MonoBehaviour
 
         //playerName = info.nickName;
     }
+    public void SetSkill(int skill)
+    {
+        mPlayer.skillId = skill;
+        Debug.Log("获得技能: "+skill);
+    }
     public void ResetData()
     {
         mPlayer.deadNum = 0;
@@ -356,7 +361,7 @@ public class UnitItemBaseCtrl : MonoBehaviour
 
         GameObject bullet = Utils.CreateInstance(this.Bullet, SceneController.instance.gameObject, true);
         bullet.transform.position = this.transform.position + new Vector3(0, 0.5f, 0);
-        bullet.GetComponent<BulletCtrl>().SetData(_aimDirectionVector.normalized, 30f, distanceToObstacle, this.hitPoints,this);
+        bullet.GetComponent<BulletCtrl>().SetData(_aimDirectionVector.normalized, 20f, distanceToObstacle, this.hitPoints,this);
 
         GameObject particle = SceneController.instance.PlayParticle(this.AttackParticle, this.transform.position + new Vector3(0, 0.5f, 0), 3);
         particle.transform.rotation = Quaternion.LookRotation(_aimDirectionVector);
