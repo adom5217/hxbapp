@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d148822da1c34c619f086bffbf8189a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 1364659626159490, guid: 595acd98dabac4b9c824656f86aec724, type: 3}
+  Bullet: {fileID: 2102106576152696155, guid: 75ab42969a2d6e640862d02912954d1b, type: 3}
   AttackParticle: {fileID: 1323408214431884, guid: 4cf198dbd48ae43aa90c7e17459e4f60,
     type: 3}
   KillParticle: {fileID: 1667554098873812, guid: d0909ae0ed6d045208fa8c26a58d4c76,
@@ -141,6 +141,7 @@ MonoBehaviour:
   instanceId: 0
   isOurTeam: 0
   isKilled: 0
+  isPlayerSelf: 0
   playerName: Cat
   speed: 2.5
   attackRange: 6
