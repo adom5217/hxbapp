@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5091935335839527405}
   - component: {fileID: 8931543178887610023}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 8594930185124569710}
   - component: {fileID: 8554062262951770250}
   - component: {fileID: 4050777873944994539}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SkillBook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4050777873944994539
 MonoBehaviour:
@@ -126,6 +126,18 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 7294b48c12b31a14e89217fdf77450f2, type: 3}
       propertyPath: m_Name
       value: feibiao
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7294b48c12b31a14e89217fdf77450f2, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 7294b48c12b31a14e89217fdf77450f2, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 7294b48c12b31a14e89217fdf77450f2, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7294b48c12b31a14e89217fdf77450f2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -204,9 +216,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5091935335839527405}
     m_Modifications:
+    - target: {fileID: 100000, guid: 680d597e06aca264baa01fbc78a7f75e, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 680d597e06aca264baa01fbc78a7f75e, type: 3}
       propertyPath: m_Name
       value: chuansong
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 680d597e06aca264baa01fbc78a7f75e, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 680d597e06aca264baa01fbc78a7f75e, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 680d597e06aca264baa01fbc78a7f75e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -285,9 +309,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5091935335839527405}
     m_Modifications:
+    - target: {fileID: 100000, guid: 044738c3eff74d44daadc6d0164ff93e, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 044738c3eff74d44daadc6d0164ff93e, type: 3}
       propertyPath: m_Name
       value: baozha
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 044738c3eff74d44daadc6d0164ff93e, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 044738c3eff74d44daadc6d0164ff93e, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 044738c3eff74d44daadc6d0164ff93e, type: 3}
       propertyPath: m_LocalPosition.x

@@ -30,7 +30,7 @@ GameObject:
   - component: {fileID: 2105986627449817745}
   - component: {fileID: 2074055600205926517}
   - component: {fileID: 2071078411464442893}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bullet_hxb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,9 +84,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2105986627449817745}
     m_Modifications:
+    - target: {fileID: 100000, guid: 4b53e43c2a86c6442a022372acba627b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 4b53e43c2a86c6442a022372acba627b, type: 3}
       propertyPath: m_Name
       value: huixuanbiao
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 4b53e43c2a86c6442a022372acba627b, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 4b53e43c2a86c6442a022372acba627b, type: 3}
       propertyPath: m_LocalPosition.x
