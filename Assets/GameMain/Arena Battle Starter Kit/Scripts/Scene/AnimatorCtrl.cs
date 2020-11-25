@@ -81,5 +81,7 @@ public class AnimatorCtrl : MonoBehaviour
             SetInt("animation,7");
         else if (state == Common.State.WALK)
             SetInt("animation,21");
+        else if(state == Common.State.DASH)
+            SetInt("animation,8");
     }
 }

@@ -219,7 +219,7 @@ public class UnitItemBaseCtrl : MonoBehaviour
     {
         transform.rotation = Quaternion.LookRotation(direction);
     }
-
+    Vector3 lastMoveVector = Vector3.forward;
     public void Move(Vector3 moveVector)
     {
         //this is for slip unit when it collide with obstacle
@@ -240,7 +240,7 @@ public class UnitItemBaseCtrl : MonoBehaviour
                 }
             }
         }
-
+        lastMoveVector = moveVector;
         this.LookAt(moveVector);
         transform.Translate(moveVector * speed * Time.deltaTime, Space.World);
 
@@ -304,16 +304,27 @@ public class UnitItemBaseCtrl : MonoBehaviour
             this.StartCoroutine(_StopAttack());
         }
     }
+    //瞬移
+    public void MoveActtack()
+    {
+        if (Time.time - this._lastShootedTime > reloadTime)
+        {
+            this.SetState(Common.State.DASH);
+            this._lastShootedTime = Time.time;
+            this.StartCoroutine(FastMove());
+        }
+    }
     //近战攻击
     public void NearAttack()
     {
-    
+        this.SetState(Common.State.ATTACK);
     }
 
     //远程攻击
     public void FarAttack()
     {
-
+        Attack();
+        
     }
 
     public UnitItemBaseCtrl GetNearestEnemy()
@@ -345,7 +356,20 @@ public class UnitItemBaseCtrl : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         this.SetState(Common.State.IDLE);
     }
-
+    int moveCount = 0;
+    public IEnumerator FastMove()
+    {
+        moveCount = 30;
+        this.LookAt(this._aimDirectionVector);
+        while (moveCount > 0)
+        {
+            transform.Translate(_aimDirectionVector * speed*0.05f, Space.World);
+            yield return new WaitForEndOfFrame();
+            moveCount--;
+        }
+        yield return new WaitForSeconds(0.2f);
+        this.SetState(Common.State.IDLE);
+    }
     public void ShootBullet()
     {
         float distanceToObstacle = attackRange;

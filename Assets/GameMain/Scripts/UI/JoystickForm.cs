@@ -143,7 +143,7 @@ namespace StarForce
         public void OnTapAttackerJoystickComponent()
         {
             if (SceneController.instance.player != null)
-                SceneController.instance.player.Attack();
+                SceneController.instance.player.MoveActtack();
         }
         
         public void OnShowSetting()
