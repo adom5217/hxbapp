@@ -410,7 +410,7 @@ public class UnitItemBaseCtrl : MonoBehaviour
         this._itemUI.SetEnergyBarProgress(this.currentHealth / this.healthPoints);
         return false;
     }
-
+    
     void OnCollisionExit(Collision collision)
     {
         this._isCollidingWithObstacle = false;

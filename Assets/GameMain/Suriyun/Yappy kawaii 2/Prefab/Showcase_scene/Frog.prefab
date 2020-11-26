@@ -1078,9 +1078,11 @@ GameObject:
   - component: {fileID: 4314887639834510}
   - component: {fileID: 33935115039836242}
   - component: {fileID: 23720683852438220}
+  - component: {fileID: 3236424150359632358}
+  - component: {fileID: 243106889673480331}
   m_Layer: 0
   m_Name: MonkeymaceA
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1146,6 +1148,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3236424150359632358
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149572314855626}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.030396411, y: 0.030396445, z: 0.2465867}
+  m_Center: {x: -0.000000030099716, y: 0.00000002015669, z: 0.08817313}
+--- !u!114 &243106889673480331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149572314855626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944889a9164adeb4b9c04ec6e3f2f0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1153045331432630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,9 +1276,11 @@ GameObject:
   - component: {fileID: 4910432697808820}
   - component: {fileID: 33860264682516848}
   - component: {fileID: 23452213382983240}
+  - component: {fileID: 3593182934139351635}
+  - component: {fileID: 938749565566910122}
   m_Layer: 0
   m_Name: MonkeymaceC
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1317,6 +1346,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3593182934139351635
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185028826780782}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.030396411, y: 0.030396445, z: 0.2465867}
+  m_Center: {x: -0.000000030099716, y: 0.00000002015669, z: 0.08817313}
+--- !u!114 &938749565566910122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185028826780782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944889a9164adeb4b9c04ec6e3f2f0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1196449741452992
 GameObject:
   m_ObjectHideFlags: 0
@@ -2340,9 +2394,11 @@ GameObject:
   - component: {fileID: 4310573127348424}
   - component: {fileID: 33344638985580396}
   - component: {fileID: 23757814914724366}
+  - component: {fileID: 7656302648615502980}
+  - component: {fileID: 8311672873286705930}
   m_Layer: 0
   m_Name: BoneA
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2408,6 +2464,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7656302648615502980
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370988747435342}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09302814, y: 0.02351599, z: 0.2645965}
+  m_Center: {x: -0.000000029970906, y: 0.000000017880325, z: 0.049982056}
+--- !u!114 &8311672873286705930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370988747435342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944889a9164adeb4b9c04ec6e3f2f0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1373559259863252
 GameObject:
   m_ObjectHideFlags: 0
@@ -3027,9 +3108,11 @@ GameObject:
   - component: {fileID: 4566926968105740}
   - component: {fileID: 33618972607128070}
   - component: {fileID: 23740436143878476}
+  - component: {fileID: 278140893321250392}
+  - component: {fileID: 2370173505197123005}
   m_Layer: 0
   m_Name: SwordToyC
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3095,6 +3178,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &278140893321250392
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458974709475406}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.10823449, y: 0.021700649, z: 0.28103742}
+  m_Center: {x: -0.00000003757662, y: 0.00000002062183, z: 0.095976874}
+--- !u!114 &2370173505197123005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458974709475406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944889a9164adeb4b9c04ec6e3f2f0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1476419485846972
 GameObject:
   m_ObjectHideFlags: 0
@@ -3168,9 +3276,11 @@ GameObject:
   - component: {fileID: 4552298486000136}
   - component: {fileID: 33985280024480664}
   - component: {fileID: 23046251053207774}
+  - component: {fileID: 6361401309465873901}
+  - component: {fileID: 1054330750802297198}
   m_Layer: 0
   m_Name: SwordToyA
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3236,6 +3346,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &6361401309465873901
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487663083019292}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.10823449, y: 0.021700649, z: 0.28103742}
+  m_Center: {x: -0.00000003757662, y: 0.00000002062183, z: 0.095976874}
+--- !u!114 &1054330750802297198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487663083019292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944889a9164adeb4b9c04ec6e3f2f0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1490657483981962
 GameObject:
   m_ObjectHideFlags: 0
@@ -3611,9 +3746,11 @@ GameObject:
   - component: {fileID: 4877994947230142}
   - component: {fileID: 33746475473007312}
   - component: {fileID: 23038640146971938}
+  - component: {fileID: 5593347192863907534}
+  - component: {fileID: 7566267244787559336}
   m_Layer: 0
   m_Name: BoneB
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3679,6 +3816,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &5593347192863907534
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585972512899494}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09302814, y: 0.02351599, z: 0.2645965}
+  m_Center: {x: -0.000000029970906, y: 0.000000017880325, z: 0.049982056}
+--- !u!114 &7566267244787559336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585972512899494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944889a9164adeb4b9c04ec6e3f2f0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1589404056953980
 GameObject:
   m_ObjectHideFlags: 0
@@ -3752,9 +3914,11 @@ GameObject:
   - component: {fileID: 4957522998027408}
   - component: {fileID: 33356964957635624}
   - component: {fileID: 23616916608059370}
+  - component: {fileID: 3767718344545850432}
+  - component: {fileID: 6654766007285780377}
   m_Layer: 0
   m_Name: HookB
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3820,6 +3984,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3767718344545850432
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603656023203256}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.13898823, y: 0.10133751, z: 0.10133875}
+  m_Center: {x: 0.036770266, y: 0.00092497416, z: -0.0026809154}
+--- !u!114 &6654766007285780377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603656023203256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944889a9164adeb4b9c04ec6e3f2f0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1604672823778980
 GameObject:
   m_ObjectHideFlags: 0
@@ -4474,9 +4663,11 @@ GameObject:
   - component: {fileID: 4057085705417830}
   - component: {fileID: 33651374152674974}
   - component: {fileID: 23309026543982692}
+  - component: {fileID: 8614970831341683714}
+  - component: {fileID: 2135739220887491148}
   m_Layer: 0
   m_Name: BoneC
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4542,6 +4733,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &8614970831341683714
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699235214314248}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09302814, y: 0.02351599, z: 0.2645965}
+  m_Center: {x: -0.000000029970906, y: 0.000000017880325, z: 0.049982056}
+--- !u!114 &2135739220887491148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699235214314248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944889a9164adeb4b9c04ec6e3f2f0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1700987595551890
 GameObject:
   m_ObjectHideFlags: 0
@@ -4835,9 +5051,11 @@ GameObject:
   - component: {fileID: 4928418863122078}
   - component: {fileID: 33703434186407178}
   - component: {fileID: 23607519676452388}
+  - component: {fileID: 3534639075802480219}
+  - component: {fileID: 6934207614610287637}
   m_Layer: 0
   m_Name: SwordToyB
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4903,6 +5121,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3534639075802480219
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742696340612672}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.10823449, y: 0.021700649, z: 0.28103742}
+  m_Center: {x: -0.00000003757662, y: 0.00000002062183, z: 0.095976874}
+--- !u!114 &6934207614610287637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742696340612672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944889a9164adeb4b9c04ec6e3f2f0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1748388175594122
 GameObject:
   m_ObjectHideFlags: 0
@@ -5045,9 +5288,11 @@ GameObject:
   - component: {fileID: 4322137514601862}
   - component: {fileID: 33409709094365674}
   - component: {fileID: 23781951535521966}
+  - component: {fileID: 1212411443668790528}
+  - component: {fileID: 7340842951886835984}
   m_Layer: 0
   m_Name: MonkeymaceB
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5113,6 +5358,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1212411443668790528
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777618809162530}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.030396411, y: 0.030396445, z: 0.2465867}
+  m_Center: {x: -0.000000030099716, y: 0.00000002015669, z: 0.08817313}
+--- !u!114 &7340842951886835984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777618809162530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944889a9164adeb4b9c04ec6e3f2f0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1785997647971446
 GameObject:
   m_ObjectHideFlags: 0
@@ -5344,9 +5614,11 @@ GameObject:
   - component: {fileID: 4183890219757516}
   - component: {fileID: 33569223689483366}
   - component: {fileID: 23459544658259418}
+  - component: {fileID: 2171132335335574568}
+  - component: {fileID: 3628233099053412907}
   m_Layer: 0
   m_Name: HookC
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5412,6 +5684,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &2171132335335574568
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807421760751288}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.13898823, y: 0.10133751, z: 0.10133875}
+  m_Center: {x: 0.036770266, y: 0.00092497416, z: -0.0026809154}
+--- !u!114 &3628233099053412907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807421760751288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944889a9164adeb4b9c04ec6e3f2f0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1809041666647832
 GameObject:
   m_ObjectHideFlags: 0
@@ -6130,9 +6427,11 @@ GameObject:
   - component: {fileID: 4700301942909318}
   - component: {fileID: 33363433337596374}
   - component: {fileID: 23320159682105834}
+  - component: {fileID: 660452693440342908}
+  - component: {fileID: 1589319356991749578}
   m_Layer: 0
   m_Name: HookA
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6198,6 +6497,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &660452693440342908
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906718367432972}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.13898823, y: 0.10133751, z: 0.10133875}
+  m_Center: {x: 0.036770266, y: 0.00092497416, z: -0.0026809154}
+--- !u!114 &1589319356991749578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906718367432972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944889a9164adeb4b9c04ec6e3f2f0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1910762525602332
 GameObject:
   m_ObjectHideFlags: 0

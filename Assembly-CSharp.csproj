@@ -76,6 +76,7 @@
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\UnitItem\UnitItemBaseCtrl.cs" />
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\UnitItem\_AI\UnitItemAIHelperCtrl.cs" />
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\UnitItem\_Bullets\BulletCtrl.cs" />
+    <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\UnitItem\_Bullets\WeaponCtrl.cs" />
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\Scene\UnitItem\_UI\UnitItemUICtrl.cs" />
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\UI\Base\ClosableWindowCtrl.cs" />
     <Compile Include="Assets\GameMain\Arena Battle Starter Kit\Scripts\UI\Base\JoystickCtrl.cs" />
