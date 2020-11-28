@@ -32,7 +32,7 @@ public class AnimatorCtrl : MonoBehaviour
         string name = param[0];
         int value = Convert.ToInt32(param[1]);
 
-        Debug.Log(name + " " + value);
+        //Debug.Log(name + " " + value);
             
         animator.SetInteger(name, value);
            

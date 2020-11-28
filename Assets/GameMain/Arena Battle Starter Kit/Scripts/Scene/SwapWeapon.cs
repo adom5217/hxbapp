@@ -6,7 +6,7 @@ public class SwapWeapon : MonoBehaviour
 {
     public GameObject[] weapons;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         foreach (GameObject c in weapons)
         {

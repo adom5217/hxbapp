@@ -183,7 +183,9 @@
     <Compile Include="Assets\GameMain\Scripts\UI\MatchForm\MatchFormPlayer.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\MenuForm.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\OperationGuideForm\OperationGuideForm.cs" />
+    <Compile Include="Assets\GameMain\Scripts\UI\OverForm.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\RankForm\RankForm.cs" />
+    <Compile Include="Assets\GameMain\Scripts\UI\RankForm\RankListItem.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\RoleForm\RoleForm.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\SettingForm.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\UGuiForm.cs" />

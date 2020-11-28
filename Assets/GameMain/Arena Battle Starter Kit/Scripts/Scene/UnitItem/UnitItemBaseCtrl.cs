@@ -185,7 +185,8 @@ public class UnitItemBaseCtrl : MonoBehaviour
     public void SetData(PlayerData info)
     {
         mPlayer = info;
-        Debug.Log(info);
+        if(isPlayerSelf)
+            Debug.Log("我的：武器 "+info.itemId +" 皮肤："+info.skinId);
         //设置皮肤
         var mat = Model.GetComponent<SwapMaterials>();
         mat.Swap(info.skinId);
