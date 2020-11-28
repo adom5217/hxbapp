@@ -34,6 +34,12 @@
     <String Key="RoleForm.Prop" Value="道具" />
     <String Key="RankForm.GameRank" Value="遊戲排行" />
     <String Key="RankForm.Continue" Value="繼續" />
+
+    <String Key="SettingForm.Title" Value="選項設置" />
+    <String Key="SettingForm.Volume" Value="音效音量:" />
+    <String Key="SettingForm.Music" Value="背景音樂:" />
+    <String Key="SettingForm.Continue" Value="繼續" />
+    
     <String Key="OperationGuideForm.Continue" Value="繼續" />
     <String Key="OperationGuideForm.FarAttack" Value="遠攻" />
     <String Key="OperationGuideForm.Sprint" Value="沖刺" />

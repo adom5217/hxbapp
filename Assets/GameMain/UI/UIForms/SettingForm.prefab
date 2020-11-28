@@ -5708,7 +5708,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u80CC\u666F\u97F3\u4E50\uFF1A"
+  m_Text: SettingForm.Music
 --- !u!114 &8326373674266721267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5818,7 +5818,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u9009\u9879\u8BBE\u7F6E"
+  m_Text: SettingForm.Title
 --- !u!114 &2661673992480660927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6108,7 +6108,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RankForm.Continue
+  m_Text: SettingForm.Continue
 --- !u!114 &2983368437848288061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6399,7 +6399,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u97F3\u6548\u97F3\u91CF\uFF1A"
+  m_Text: SettingForm.Volume
 --- !u!114 &4062826604148230190
 MonoBehaviour:
   m_ObjectHideFlags: 0
