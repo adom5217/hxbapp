@@ -47,4 +47,40 @@ public class OnKillOneEventArgs : GameEventArgs
 
 }
 
+//获得技能事件
+public class OnSkillEventArgs : GameEventArgs
+{
+    public static readonly int EventId = typeof(OnSkillEventArgs).GetHashCode();
+    public override int Id => EventId;
+
+    public override void Clear()
+    {
+        SkillID = -1;
+    }
+    public string ownerName
+    {
+        get;
+        private set;
+    }
+    public int SkillID
+    {
+        get;
+        private set;
+    }
+    public bool MySelf
+    {
+        get;
+        private set;
+    }
+    public static OnSkillEventArgs Create(string owner, int id, bool isMy)
+    {
+        // 使用引用池技术，避免频繁内存分配
+        OnSkillEventArgs e = ReferencePool.Acquire<OnSkillEventArgs>();
+        e.ownerName = owner;
+        e.SkillID = id;
+        e.MySelf = isMy;
+        return e;
+    }
+
+}
 

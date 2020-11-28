@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using StarForce;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -199,10 +200,30 @@ public class UnitItemBaseCtrl : MonoBehaviour
 
         //playerName = info.nickName;
     }
+    //-1 去掉武器
+    public void SetWeapon(bool show)
+    {
+        var wp = Model.GetComponent<SwapWeapon>();
+        if (show == false)
+        {
+            wp.Hide();
+        }
+        else
+        {
+            wp.Swap(mPlayer.itemId);
+        }
+        
+    }
+    public GameObject getWeaponObj()
+    {
+        var wp = Model.GetComponent<SwapWeapon>();
+        return wp.weapons[mPlayer.itemId];
+    }
     public void SetSkill(int skill)
     {
         mPlayer.skillId = skill;
         Debug.Log("获得技能: "+skill);
+        GameEntry.Event.Fire(OnSkillEventArgs.EventId, OnSkillEventArgs.Create(this.playerName, skill, isPlayerSelf));
     }
     public void ResetData()
     {
@@ -315,9 +336,12 @@ public class UnitItemBaseCtrl : MonoBehaviour
         }
     }
     //近战攻击
-    public void NearAttack()
+    public async void NearAttack()
     {
         this.SetState(Common.State.ATTACK);
+        getWeaponObj().GetComponent<WeaponCtrl>().SetData(this);
+        await Task.Delay(500);
+        this.SetState(Common.State.IDLE);
     }
 
     //远程攻击
@@ -392,7 +416,25 @@ public class UnitItemBaseCtrl : MonoBehaviour
         Destroy(particle, distanceToObstacle/30);
     }
 
+    public void ShootWeapon()
+    {
+        float distanceToObstacle = attackRange;
+        RaycastHit hit;
+        Vector3 unitCenterPos = transform.position + new Vector3(0, 0.5f, 0);
+        Ray ray = new Ray(unitCenterPos, _aimDirectionVector);
+        if (Physics.Raycast(ray, out hit) && hit.transform.CompareTag("Obstacle"))
+        {
+            float distance = Vector3.Distance(hit.point, unitCenterPos);
+            if (distance < distanceToObstacle)
+                distanceToObstacle = distance;
+        }
 
+        GameObject bullet = Utils.CreateInstance(getWeaponObj(), SceneController.instance.gameObject, true);
+        bullet.transform.position = this.transform.position + new Vector3(0, 0.5f, 0);
+        bullet.GetComponent<WeaponCtrl>().SetData(_aimDirectionVector.normalized, 40f, distanceToObstacle, this);
+
+        
+    }
     public void PlayKillParticle()
     {
         GameObject particle = SceneController.instance.PlayParticle(this.KillParticle, this.transform.position + new Vector3(0, 0.1f, 0), 3);

@@ -18,11 +18,15 @@ public class SwapWeapon : MonoBehaviour
 
     public void Swap(int index)
     {
+        Hide();
+        if (index<weapons.Length)
+            weapons[index].SetActive(true);
+    }
+    public void Hide()
+    {
         foreach (GameObject c in weapons)
         {
             c.SetActive(false);
         }
-        if (index<weapons.Length)
-            weapons[index].SetActive(true);
     }
 }
