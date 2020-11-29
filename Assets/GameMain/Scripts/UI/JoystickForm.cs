@@ -150,7 +150,10 @@ namespace StarForce
         {
             GameEntry.UI.OpenUIForm(UIFormId.SettingForm);
         }
-
+        public void OnShowRank()
+        {
+            GameEntry.UI.OpenUIForm(UIFormId.RankForm);
+        }
         public void OnSkillUp()
         {
             Log.Debug("释放下技能上1 加速");

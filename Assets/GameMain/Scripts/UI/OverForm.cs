@@ -48,10 +48,13 @@ namespace StarForce
 
         public void ContinueButtionClick()
         {
+            SceneController.instance.Stage.ResetGame();
+            GameEntry.UI.OpenUIForm(UIFormId.JoystickForm);
             this.Close();
         }
         public void ReturnButtionClick()
         {
+            ((ProcedureMain)GameEntry.Procedure.CurrentProcedure).GotoMenu();
             this.Close();
         }
     }

@@ -20,15 +20,15 @@ namespace StarForce
     {
         // 排行榜的6行
         public List<Transform> rankListItem;
+
         protected override void OnOpen(object userData)
         {
+            base.OnOpen(userData);
             // 1.获取排行榜数据
             // 2.修改展示数据
-        }
-        protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
-        {
 
         }
+       
         protected override void OnResume()
         {
 
@@ -41,7 +41,8 @@ namespace StarForce
         //继续按钮点击
         public void ContinueButtionClick()
         {
-
+            GameEntry.UI.OpenUIForm(UIFormId.JoystickForm);
+            Close();
         }
     }
 }
