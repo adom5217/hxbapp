@@ -12,6 +12,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityGameFramework.Runtime;
+using static UnityEngine.UI.Toggle;
 
 namespace StarForce
 {
@@ -365,7 +366,9 @@ namespace StarForce
             this.selectedRoleIndex = roleIndex;
             if (!roleToggle[roleIndex].isOn)
             {
+                roleToggle[roleIndex].onValueChanged.RemoveAllListeners();
                 roleToggle[roleIndex].isOn = true;
+                roleToggle[roleIndex].onValueChanged.AddListener(OnRoleToggleChanged);
             }
             Log.Debug("设置模型:" + roleIndex);
             GameData.instance.SetModel(roleIndex);
